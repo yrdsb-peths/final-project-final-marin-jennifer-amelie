@@ -16,6 +16,7 @@ public class Capybara extends Actor
     GreenfootImage[] idleLeft = new GreenfootImage[5];
     //direction of capybara
     String facing = "right";
+    SimpleTimer animationTimer = new SimpleTimer();
     
     /**
      * constructor - code gets run first time instance created
