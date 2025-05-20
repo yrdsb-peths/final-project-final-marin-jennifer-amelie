@@ -26,6 +26,7 @@ public class Menu extends World
         Tree hard = new Tree();
         addObject(hard, 500, 225);
         showText("3", 510, 305);
-        
+        Label label = new Label("Select a level", 60);
+        addObject(label, 275, 100);
     }
 }
