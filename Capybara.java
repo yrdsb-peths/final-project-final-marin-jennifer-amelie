@@ -12,13 +12,14 @@ public class Capybara extends Actor
      * Act - do whatever the Capybara wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
-    {
-        GreenfootImage[] idleRight = new GreenfootImage[5];
-        GreenfootImage[] idleLeft = new GreenfootImage[5];
-        //direction of elephant
-        String facing = "right";
-    }
+    GreenfootImage[] idleRight = new GreenfootImage[5];
+    GreenfootImage[] idleLeft = new GreenfootImage[5];
+    //direction of capybara
+    String facing = "right";
+    
+    /**
+     * constructor - code gets run first time instance created
+     */
     
     public Capybara() {
         for(int i = 0; i<idleRight.length; i++){
@@ -30,7 +31,13 @@ public class Capybara extends Actor
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(120, 100);
         }
-        animationTimer.mark();
         setImage(idleRight[0]);
     }
+    int imaegIndex = 0;
+    
+    public void act()
+    {
+    }
+    
+    
 }
