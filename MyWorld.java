@@ -5,5 +5,7 @@ public class MyWorld extends World {
         super(600, 400, 1);
         Capybara capybara = new Capybara();
         addObject(capybara, 300, 300);
+        
+        setBackground("images/gameBG.png");
     }
 }
