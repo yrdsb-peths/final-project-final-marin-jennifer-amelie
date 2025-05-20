@@ -16,4 +16,14 @@ public class TitleScreen extends World
         getBackground().drawImage(titleBg, 275, 100);
         addObject(titleLabel, 275, 100);
     }
+    
+    /**
+     * The main world act loop
+     */
+    public void act(){
+        if(Greenfoot.isKeyDown("space")){
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
+    }
 }
