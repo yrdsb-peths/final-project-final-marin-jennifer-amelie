@@ -31,12 +31,38 @@ public class Capybara extends Actor
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(120, 100);
         }
+        animationTimer.mark();
         setImage(idleRight[0]);
     }
-    int imaegIndex = 0;
+    int imageIndex = 0;
+    
+    // animate capybara
+    public void animateCapybara(){
+        if(animationTimer.millisElapsed() < 100){
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right")){
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;  
+        } else {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
+        
+    }
     
     public void act()
     {
+        if(Greenfoot.isKeyDown("left")){            
+            move(-5);
+            facing = "left";
+        }
+        if(Greenfoot.isKeyDown("right")){
+            move(5);
+            facing = "right";
+        }
+        animateCapybara();
     }
     
     
