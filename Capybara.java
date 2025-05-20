@@ -25,11 +25,11 @@ public class Capybara extends Actor
     public Capybara() {
         for(int i = 0; i<idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
+            idleRight[i].mirrorHorizontally();
             idleRight[i].scale(120, 100);
         }
         for(int i = 0; i<idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
-            idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(120, 100);
         }
         animationTimer.mark();
