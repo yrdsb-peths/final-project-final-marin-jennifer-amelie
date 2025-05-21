@@ -52,6 +52,44 @@ public class Capybara extends Actor
         }
         
     }
+<<<<<<< Updated upstream
+=======
+    // walking
+    public void walkingCapybara(){
+        if(animationTimer.millisElapsed() < 100){
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right")){
+            setImage(walkRight[walkingIndex]);
+            walkingIndex = (walkingIndex + 1) % walkRight.length;  
+        } else {
+            setImage(walkLeft[walkingIndex]);
+            walkingIndex = (walkingIndex + 1) % walkLeft.length;
+        }
+        
+    }
+    // jumping
+    public void jumpCapybara(){
+        if(animationTimer.millisElapsed() < 100){
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right")){
+            setImage(jumpRight[jumpIndex]);
+            jumpIndex = (jumpIndex + 1) % jumpRight.length;  
+        } else {
+            setImage(jumpLeft[jumpIndex]);
+            jumpIndex = (jumpIndex + 1) % jumpLeft.length;
+        }
+    }
+    
+    public void jump() {
+        vSpeed = vSpeed - jumpStrength;
+        jumping = true;
+        fall();
+    }
+>>>>>>> Stashed changes
     
     public void act()
     {
@@ -64,7 +102,22 @@ public class Capybara extends Actor
             move(5);
             facing = "right";
         }
+<<<<<<< Updated upstream
         animateCapybara();
+=======
+        if (Greenfoot.isKeyDown("up") && jumping == false) {
+            if (facing.equals("left")) {
+                facing = "left";
+            }
+            if (facing.equals("right")) {
+                facing = "right";
+            }
+            jump();
+            // add a jumping sound
+            jumpCapybara();
+        }
+        idleCapybara();
+>>>>>>> Stashed changes
     }
     
     public void checkFall() {
@@ -80,6 +133,7 @@ public class Capybara extends Actor
         
         if(vSpeed <=12) {
             vSpeed = vSpeed + gravity;
+            jumping = true;
         }
     }
     
@@ -89,6 +143,7 @@ public class Capybara extends Actor
         
         Actor ground = getOneObjectAtOffset(0, lookForGround, Platform.class);
         if (ground == null) {
+            jumping = true;
             return false;
         } else {
             moveToGround(ground);
@@ -101,6 +156,7 @@ public class Capybara extends Actor
         int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
         
         setLocation(getX(), newY);
+        jumping = false;
     }
     
 }
