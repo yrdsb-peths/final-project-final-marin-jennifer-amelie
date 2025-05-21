@@ -125,6 +125,7 @@ public class Capybara extends Actor
     
     public void act()
     {
+        checkFall();
         if(Greenfoot.isKeyDown("left")){            
             move(-5);
             facing = "left";
@@ -148,5 +149,40 @@ public class Capybara extends Actor
         idleCapybara();
     }
     
+    public void checkFall() {
+        if (onGround() == true) {
+            vSpeed = 0;
+        } else {
+            fall();
+        }
+    }
+    
+    public void fall() {
+        setLocation(getX(), getY() + vSpeed);
+        
+        if(vSpeed <=12) {
+            vSpeed = vSpeed + gravity;
+        }
+    }
+    
+    public boolean onGround() {
+        int spriteHeight = getImage().getHeight();
+        int lookForGround = spriteHeight/2;
+        
+        Actor ground = getOneObjectAtOffset(0, lookForGround, Platform.class);
+        if (ground == null) {
+            return false;
+        } else {
+            moveToGround(ground);
+            return true;
+        }
+    }
+    
+    public void moveToGround(Actor ground) {
+        int groundHeight = ground.getImage().getHeight();
+        int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
+        
+        setLocation(getX(), newY);
+    }
     
 }
