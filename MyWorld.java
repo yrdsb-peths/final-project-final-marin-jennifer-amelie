@@ -5,10 +5,10 @@ public class MyWorld extends World {
         super(680, 520, 1);
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
-        Log floor = new Log();
-        addObject(floor, 340, 510);
-        Log log = new Log();
-        addObject(log, 0, 0);
+        //Log floor = new Log();
+        //addObject(floor, 340, 510);
+        //Log log = new Log();
+        //addObject(log, 0, 0);
         setBackground("images/gameBG.png");
     }
 }
