@@ -50,7 +50,8 @@ public class Capybara extends Actor
         setImage(idleRight[0]);
         setImage(walkRight[0]);
     }
-    int imageIndex = 0;
+    int idleIndex = 0;
+    int walkingIndex = 0;
     
     // capybara animations
     //idle
@@ -60,11 +61,11 @@ public class Capybara extends Actor
         }
         animationTimer.mark();
         if(facing.equals("right")){
-            setImage(idleRight[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleRight.length;  
+            setImage(idleRight[idleIndex]);
+            idleIndex = (idleIndex + 1) % idleRight.length;  
         } else {
-            setImage(idleLeft[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleLeft.length;
+            setImage(idleLeft[idleIndex]);
+            idleIndex = (idleIndex + 1) % idleLeft.length;
         }
         
     }
@@ -75,11 +76,11 @@ public class Capybara extends Actor
         }
         animationTimer.mark();
         if(facing.equals("right")){
-            setImage(walkRight[imageIndex]);
-            imageIndex = (imageIndex + 1) % walkRight.length;  
+            setImage(walkRight[walkingIndex]);
+            walkingIndex = (walkingIndex + 1) % walkRight.length;  
         } else {
-            setImage(walkLeft[imageIndex]);
-            imageIndex = (imageIndex + 1) % walkLeft.length;
+            setImage(walkLeft[walkingIndex]);
+            walkingIndex = (walkingIndex + 1) % walkLeft.length;
         }
         
     }
