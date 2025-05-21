@@ -56,11 +56,11 @@ public class Capybara extends Actor
         for(int i = 0; i<jumpRight.length; i++){
             jumpRight[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpRight[i].mirrorHorizontally();
-            jumpRight[i].scale(120, 100);
+            jumpRight[i].scale(80, 60);
         }
         for(int i = 0; i<jumpLeft.length; i++){
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
-            jumpLeft[i].scale(120, 100);
+            jumpLeft[i].scale(80, 60);
         }
         
         animationTimer.mark();
