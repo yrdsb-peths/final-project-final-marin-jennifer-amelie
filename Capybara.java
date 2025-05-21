@@ -29,22 +29,22 @@ public class Capybara extends Actor
         for(int i = 0; i<idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
             idleRight[i].mirrorHorizontally();
-            idleRight[i].scale(120, 120);
+            idleRight[i].scale(80, 80);
         }
         for(int i = 0; i<idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
-            idleLeft[i].scale(120, 120);
+            idleLeft[i].scale(80, 80);
         }
         
         // walking animation
         for(int i = 0; i<walkRight.length; i++){
             walkRight[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkRight[i].mirrorHorizontally();
-            walkRight[i].scale(120, 100);
+            walkRight[i].scale(80, 60);
         }
         for(int i = 0; i<walkLeft.length; i++){
             walkLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
-            walkLeft[i].scale(120, 100);
+            walkLeft[i].scale(80, 60);
         }
         animationTimer.mark();
         setImage(idleRight[0]);
