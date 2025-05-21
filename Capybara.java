@@ -8,14 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Capybara extends Actor
 {
-    /**
-     * Act - do whatever the Capybara wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public int vSpeed;
+    public int gravity = 2;
+    
+    public boolean jumping;
+    public int jumpStrength = 20;
+    
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     GreenfootImage[] walkRight = new GreenfootImage[5];
     GreenfootImage[] walkLeft = new GreenfootImage[5];
+    GreenfootImage[] jumpRight = new GreenfootImage[5];
+    GreenfootImage[] jumpLeft =  new GreenfootImage[5];
+    
     //direction of capybara
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -46,12 +51,26 @@ public class Capybara extends Actor
             walkLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkLeft[i].scale(80, 60);
         }
+        
+        // jumping animation
+        for(int i = 0; i<jumpRight.length; i++){
+            jumpRight[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
+            jumpRight[i].mirrorHorizontally();
+            jumpRight[i].scale(120, 100);
+        }
+        for(int i = 0; i<jumpLeft.length; i++){
+            jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
+            jumpLeft[i].scale(120, 100);
+        }
+        
         animationTimer.mark();
         setImage(idleRight[0]);
         setImage(walkRight[0]);
+        setImage(jumpRight[0]);
     }
     int idleIndex = 0;
     int walkingIndex = 0;
+    int jumpIndex = 0;
     
     // capybara animations
     //idle
@@ -84,6 +103,25 @@ public class Capybara extends Actor
         }
         
     }
+    // jumping
+    public void jumpCapybara(){
+        if(animationTimer.millisElapsed() < 100){
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right")){
+            setImage(jumpRight[jumpIndex]);
+            jumpIndex = (jumpIndex + 1) % jumpRight.length;  
+        } else {
+            setImage(jumpLeft[jumpIndex]);
+            jumpIndex = (jumpIndex + 1) % jumpLeft.length;
+        }
+    }
+    
+    public void jump() {
+        vSpeed = vSpeed - jumpStrength;
+        jumping = true;
+    }
     
     public void act()
     {
@@ -96,6 +134,16 @@ public class Capybara extends Actor
             move(5);
             facing = "right";
             walkingCapybara();
+        }
+        if (Greenfoot.isKeyDown("up")) {
+            if (facing.equals("left")) {
+                facing = "left";
+            }
+            if (facing.equals("right")) {
+                facing = "right";
+            }
+            setLocation(getX(), getY() - 5);
+            jumpCapybara();
         }
         idleCapybara();
     }
