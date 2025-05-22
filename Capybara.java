@@ -103,8 +103,11 @@ public class Capybara extends Actor
             facing = "right";
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         animateCapybara();
 =======
+=======
+>>>>>>> Stashed changes
         if (Greenfoot.isKeyDown("up") && jumping == false) {
             if (facing.equals("left")) {
                 facing = "left";
