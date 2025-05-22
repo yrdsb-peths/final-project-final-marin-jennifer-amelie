@@ -14,7 +14,7 @@ public class Platform extends Actor
      */
     
     public Platform() {
-        setImage("images/treetrunks/wood_plank.png");  
+        Greenfoot.
     }
     
     public void act()
