@@ -2,8 +2,13 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     public MyWorld() {
-        super(600, 400, 1);
+        super(680, 520, 1);
         Capybara capybara = new Capybara();
-        addObject(capybara, 300, 300);
+        addObject(capybara, 60, 475);
+        //Log floor = new Log();
+        //addObject(floor, 340, 510);
+        //Log log = new Log();
+        //addObject(log, 0, 0);
+        setBackground("images/gameBG.png");
     }
 }
