@@ -20,6 +20,7 @@ public class Capybara extends Actor
     GreenfootImage[] walkLeft = new GreenfootImage[5];
     GreenfootImage[] jumpRight = new GreenfootImage[5];
     GreenfootImage[] jumpLeft = new GreenfootImage[5];
+    
     //direction of capybara
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -136,9 +137,10 @@ public class Capybara extends Actor
             if (facing.equals("right")) {
                 facing = "right";
             }
+            jumpCapybara();
             jump();
             // add a jumping sound
-            jumpCapybara();
+            
         }
         idleCapybara();
     }
