@@ -27,7 +27,7 @@ public class Log extends Actor
         }
         if(type.equals("stump")){
             GreenfootImage log = new GreenfootImage("treetrunks/stump.png");
-            log.scale(100, 30);
+            log.scale(100, 100);
             setImage(log); 
         }
     }
