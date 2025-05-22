@@ -12,6 +12,11 @@ public class Platform extends Actor
      * Act - do whatever the Platform wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public Platform() {
+        setImage("images/treetrunks/wood_plank.png");  
+    }
+    
     public void act()
     {
         // Add your action code here.
