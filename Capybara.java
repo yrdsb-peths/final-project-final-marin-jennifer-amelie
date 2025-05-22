@@ -121,12 +121,12 @@ public class Capybara extends Actor
     {
         checkFall();
         if(Greenfoot.isKeyDown("left")){            
-            move(-5);
+            move(-7);
             facing = "left";
             walkingCapybara();
         }
         if(Greenfoot.isKeyDown("right")){
-            move(5);
+            move(7);
             facing = "right";
             walkingCapybara();
         }
