@@ -38,9 +38,9 @@ public class Menu extends World
         addObject(label, 275, 100);
     }
     public void act(){
-        if(Greenfoot.mouseClicked(easy)){
-            MyWorld world1 = new MyWorld();
-            Greenfoot.setWorld(world1);
+        if(Greenfoot.mouseClicked(med)){
+            MyWorld world2 = new MyWorld();
+            Greenfoot.setWorld(world2);
         }
     }
 }
