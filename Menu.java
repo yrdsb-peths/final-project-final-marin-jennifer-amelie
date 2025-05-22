@@ -19,6 +19,10 @@ public class Menu extends World
         Bg bg = new Bg();
         addObject(bg, 300, 300);
         Tree easy = new Tree();
+        if(Greenfoot.mouseClicked(easy)){
+            MyWorld world1 = new MyWorld();
+            Greenfoot.setWorld(world1);
+        }
         addObject(easy, 100, 325);
         showText("1", 110, 440);
         Tree med = new Tree();
