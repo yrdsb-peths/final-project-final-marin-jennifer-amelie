@@ -12,7 +12,7 @@ public class Capybara extends Actor
     public int gravity = 2;
     
     public boolean jumping;
-    public int jumpStrength = 20;
+    public int jumpStrength = 15;
     
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
