@@ -42,7 +42,7 @@ public class MyWorld extends World {
         setBackground("images/gameBG.png");
         
         addObject(timeCount, 340, 20);
-        timeCount.setValue(90);
+        timeCount.setValue(30);
     }
     
     public void act(){
