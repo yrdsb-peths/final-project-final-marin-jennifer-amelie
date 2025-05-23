@@ -12,8 +12,8 @@ public class Water extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     
     public Water() {
-        for(int i = 1; i<waves.length; i++){
-            waves[i] = new GreenfootImage("images/waterAnimation/waterAnimation"+i+".png");
+        for(int i = 0; i<waves.length; i++){
+            waves[i] = new GreenfootImage("images/waterAnimation/waterAnimation"+(i+1)+".png");
             waves[i].scale(90, 75);
         }
         animationTimer.mark();
@@ -32,6 +32,6 @@ public class Water extends Actor
     }
     public void act()
     {
-        
+        waving();
     }
 }

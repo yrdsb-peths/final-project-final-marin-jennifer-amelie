@@ -12,7 +12,7 @@ public class MyWorld extends World {
         addObject(capybara, 60, 475);
         
         Water waves = new Water();
-        addObject(waves, 100, 100);
+        addObject(waves, 500, 490);
         
         //adding platforms
         Log floor1 = new Log("long");
@@ -61,6 +61,6 @@ public class MyWorld extends World {
             start = 1;
             tim.mark();
         }
-        setBackground("images/gameBG.png");
+        //setBackground("images/gameBG.png");
     }
 }
