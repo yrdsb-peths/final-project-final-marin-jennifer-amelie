@@ -20,18 +20,15 @@ public class Water extends Actor
         setImage(waves[0]);
     }
     
+    int waveIndex = 0;
+    
     public void waving() {
         if(animationTimer.millisElapsed() < 100){
             return;
         }
         animationTimer.mark();
-        if(facing.equals("right")){
-            setImage(idleRight[idleIndex]);
-            idleIndex = (idleIndex + 1) % idleRight.length;  
-        } else {
-            setImage(idleLeft[idleIndex]);
-            idleIndex = (idleIndex + 1) % idleLeft.length;
-        }
+        setImage(waves[waveIndex]);
+        waveIndex = (waveIndex + 1) % waves.length;
     }
     public void act()
     {
