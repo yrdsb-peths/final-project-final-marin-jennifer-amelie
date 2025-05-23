@@ -28,17 +28,17 @@ public class MyWorld extends World {
         addObject(first2, 150, 370);
         
         Log snd = new Log("long");
-        addObject(snd, 430, 290);
+        addObject(snd, 440, 280);
         
         Log ths = new Log("long");
-        addObject(ths, 250, 220);
+        addObject(ths, 250, 195);
         Log ths1 = new Log("stump");
-        addObject(ths1, 50, 175);
+        addObject(ths1, 50, 150);
         
         Log last = new Log("short");
-        addObject(last, 200, 95);
+        addObject(last, 200, 65);
         Log last1 = new Log("long");
-        addObject(last1, 600, 130);
+        addObject(last1, 600, 100);
         setBackground("images/gameBG.png");
         
         addObject(timeCount, 340, 20);
