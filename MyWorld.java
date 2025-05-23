@@ -31,7 +31,7 @@ public class MyWorld extends World {
         addObject(snd, 440, 280);
         
         Log ths = new Log("long");
-        addObject(ths, 250, 195);
+        addObject(ths, 250, 190);
         Log ths1 = new Log("stump");
         addObject(ths1, 50, 150);
         
