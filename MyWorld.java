@@ -7,7 +7,7 @@ public class MyWorld extends World {
     int start = 0;
     
     public MyWorld() {
-        super(680, 515, 1, false);
+        super(680, 515, 1);
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
         //adding platforms
