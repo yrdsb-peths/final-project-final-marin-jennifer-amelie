@@ -166,7 +166,7 @@ public class Capybara extends Actor
         int spriteHeight = getImage().getHeight();
         int lookForGround = spriteHeight/2;
         
-        Actor ground = getOneObjectAtOffset(0, lookForGround, Platform.class);
+        Actor ground = getOneObjectAtOffset(0, lookForGround, Log.class);
         if (ground == null) {
             jumping = true;
             return false;

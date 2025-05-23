@@ -58,7 +58,5 @@ public class MyWorld extends World {
             tim.mark();
         }
         setBackground("images/gameBG.png");
-        Capybara capybara = new Capybara();
-        addObject(capybara, 60, 475);
     }
 }
