@@ -7,33 +7,7 @@ public class MyWorld extends World {
     int start = 0;
     
     public MyWorld() {
-        super(680, 515, 1);
-        Capybara capybara = new Capybara();
-        addObject(capybara, 60, 475);
-        //Log floor = new Log();
-        //addObject(floor, 340, 510);
-        //Log log = new Log();
-        //addObject(log, 0, 0);
-        setBackground("images/gameBG.png");
-        
-        addObject(timeCount, 340, 20);
-        timeCount.setValue(90);
-    }
-    
-    public void act(){
-        if (start == 1){
-            if (tim.millisElapsed() > 1000){
-                timeCount.add(-1);
-                tim.mark();
-            }
-        }
-        
-        if (Greenfoot.isKeyDown("right")){
-            start = 1;
-            tim.mark();
-        }
-        super(680, 520, 1, false);
-        setBackground("images/gameBG.png");
+        super(680, 515, 1, false);
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
         //adding platforms
@@ -65,5 +39,26 @@ public class MyWorld extends World {
         addObject(last, 200, 95);
         Log last1 = new Log("long");
         addObject(last1, 600, 130);
+        setBackground("images/gameBG.png");
+        
+        addObject(timeCount, 340, 20);
+        timeCount.setValue(90);
+    }
+    
+    public void act(){
+        if (start == 1){
+            if (tim.millisElapsed() > 1000){
+                timeCount.add(-1);
+                tim.mark();
+            }
+        }
+        
+        if (Greenfoot.isKeyDown("right")){
+            start = 1;
+            tim.mark();
+        }
+        setBackground("images/gameBG.png");
+        Capybara capybara = new Capybara();
+        addObject(capybara, 60, 475);
     }
 }
