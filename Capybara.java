@@ -33,29 +33,29 @@ public class Capybara extends Actor
         for(int i = 0; i<idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
             idleRight[i].mirrorHorizontally();
-            idleRight[i].scale(90, 75);
+            idleRight[i].scale(50, 50);
         }
         for(int i = 0; i<idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
-            idleLeft[i].scale(90, 75);
+            idleLeft[i].scale(50, 50);
         }
         for(int i = 0; i<walkRight.length; i++){
             walkRight[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkRight[i].mirrorHorizontally();
-            walkRight[i].scale(90, 75);
+            walkRight[i].scale(50, 50);
         }
         for(int i = 0; i<walkLeft.length; i++){
             walkLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
-            walkLeft[i].scale(90, 75);
+            walkLeft[i].scale(50, 50);
         }
         for(int i = 0; i<jumpRight.length; i++){
             jumpRight[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpRight[i].mirrorHorizontally();
-            jumpRight[i].scale(90, 75);
+            jumpRight[i].scale(50, 50);
         }
         for(int i = 0; i<jumpLeft.length; i++){
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
-            jumpLeft[i].scale(90, 75);
+            jumpLeft[i].scale(50, 50);
         }
         animationTimer.mark();
         setImage(idleRight[0]);
