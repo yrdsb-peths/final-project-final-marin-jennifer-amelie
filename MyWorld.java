@@ -10,6 +10,10 @@ public class MyWorld extends World {
         super(680, 515, 1);
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
+        
+        Water waves = new Water();
+        addObject(waves, 500, 490);
+        
         //adding platforms
         Log floor1 = new Log("long");
         addObject(floor1, 0, 515);
@@ -65,5 +69,6 @@ public class MyWorld extends World {
             start = 1;
             tim.mark();
         }
+        //setBackground("images/gameBG.png");
     }
 }
