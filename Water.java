@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Water extends Actor
 {
-    GreenfootImage[] waves = new GreenfootImage[63];
+    //GreenfootImage[] waves = new GreenfootImage[63];
     SimpleTimer animationTimer = new SimpleTimer();
     
     //public Water() {
