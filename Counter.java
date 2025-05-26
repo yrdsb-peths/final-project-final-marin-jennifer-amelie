@@ -11,7 +11,6 @@ public class Counter extends Actor
     public Counter()
     {
         this(new String());
-        setImage("Counter.png");
     }
 
     /**

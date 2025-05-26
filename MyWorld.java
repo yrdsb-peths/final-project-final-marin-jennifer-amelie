@@ -70,6 +70,5 @@ public class MyWorld extends World {
             start = 1;
             tim.mark();
         }
-        //setBackground("images/gameBG.png");
     }
 }
