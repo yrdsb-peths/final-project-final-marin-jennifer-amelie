@@ -12,14 +12,14 @@ public class Capybara extends Actor
     public int gravity = 2;
     
     public boolean jumping;
-    public int jumpStrength = 20;
+    public int jumpStrength = 15;
     
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     GreenfootImage[] walkRight = new GreenfootImage[5];
     GreenfootImage[] walkLeft = new GreenfootImage[5];
     GreenfootImage[] jumpRight = new GreenfootImage[5];
-    GreenfootImage[] jumpLeft =  new GreenfootImage[5];
+    GreenfootImage[] jumpLeft = new GreenfootImage[5];
     
     //direction of capybara
     String facing = "right";
@@ -30,39 +30,33 @@ public class Capybara extends Actor
      */
     
     public Capybara() {
-        // idle animation
         for(int i = 0; i<idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
             idleRight[i].mirrorHorizontally();
-            idleRight[i].scale(80, 80);
+            idleRight[i].scale(50, 50);
         }
         for(int i = 0; i<idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
-            idleLeft[i].scale(80, 80);
+            idleLeft[i].scale(50, 50);
         }
-        
-        // walking animation
         for(int i = 0; i<walkRight.length; i++){
             walkRight[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkRight[i].mirrorHorizontally();
-            walkRight[i].scale(80, 60);
+            walkRight[i].scale(50, 50);
         }
         for(int i = 0; i<walkLeft.length; i++){
             walkLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
-            walkLeft[i].scale(80, 60);
+            walkLeft[i].scale(50, 50);
         }
-        
-        // jumping animation
         for(int i = 0; i<jumpRight.length; i++){
             jumpRight[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpRight[i].mirrorHorizontally();
-            jumpRight[i].scale(80, 60);
+            jumpRight[i].scale(50, 50);
         }
         for(int i = 0; i<jumpLeft.length; i++){
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
-            jumpLeft[i].scale(80, 60);
+            jumpLeft[i].scale(50, 50);
         }
-        
         animationTimer.mark();
         setImage(idleRight[0]);
         setImage(walkRight[0]);
@@ -72,8 +66,7 @@ public class Capybara extends Actor
     int walkingIndex = 0;
     int jumpIndex = 0;
     
-    // capybara animations
-    //idle
+    // animate capybara
     public void idleCapybara(){
         if(animationTimer.millisElapsed() < 100){
             return;
@@ -121,32 +114,78 @@ public class Capybara extends Actor
     public void jump() {
         vSpeed = vSpeed - jumpStrength;
         jumping = true;
+        fall();
     }
     
     public void act()
     {
+        checkFall();
         if(Greenfoot.isKeyDown("left")){            
-            move(-5);
+            move(-7);
             facing = "left";
             walkingCapybara();
         }
         if(Greenfoot.isKeyDown("right")){
-            move(5);
+            move(7);
             facing = "right";
             walkingCapybara();
         }
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown("up") && jumping == false) {
             if (facing.equals("left")) {
                 facing = "left";
             }
             if (facing.equals("right")) {
                 facing = "right";
             }
-            setLocation(getX(), getY() - 5);
             jumpCapybara();
+            jump();
+            // add a jumping sound
+            
         }
         idleCapybara();
     }
     
+    public void checkFall() {
+        if (onGround() == true) {
+            vSpeed = 0;
+        } else {
+            fall();
+        }
+    }
+    
+    public void fall() {
+        setLocation(getX(), getY() + vSpeed);
+        
+        if(vSpeed <=12) {
+            vSpeed = vSpeed + gravity;
+            jumping = true;
+        }
+    }
+    
+    public boolean onGround() {
+        int spriteHeight = getImage().getHeight();
+        int lookForGround = spriteHeight/2;
+        
+        Actor ground = getOneObjectAtOffset(0, lookForGround, Log.class);
+        if (ground == null) {
+            ground = getOneObjectAtOffset(0, lookForGround, Water.class);
+        }
+
+        if (ground == null) {
+            jumping = true;
+            return false;
+        } else {
+            moveToGround(ground);
+            return true;
+        }
+    }
+    
+    public void moveToGround(Actor ground) {
+        int groundHeight = ground.getImage().getHeight();
+        int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
+        
+        setLocation(getX(), newY);
+        jumping = false;
+    }
     
 }
