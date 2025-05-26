@@ -12,7 +12,13 @@ public class MyWorld extends World {
         addObject(capybara, 60, 475);
         
         Water waves = new Water();
-        addObject(waves, 500, 490);
+        addObject(waves, 500, 510);
+        
+        Toxin toxin = new Toxin();
+        addObject(toxin, 362, 505);
+        
+        Toxin toxin2 = new Toxin();
+        addObject(toxin2, 460, 387);
         
         //adding platforms
         Log floor1 = new Log("long");
