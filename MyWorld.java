@@ -1,16 +1,17 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
-    
+    int number = 30;
+    int start = 0;
     public MyWorld() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
-        
+
         Water waves = new Water();
         addObject(waves, 500, 490);
-        
+
         //adding platforms
         Log floor1 = new Log("long");
         addObject(floor1, 0, 515);
@@ -42,19 +43,29 @@ public class MyWorld extends World {
         addObject(last1, 600, 100);
         setBackground("images/gameBG.png");
 
-        //add timer 
-        //addObject(timeCount, 340, 20);
-        //timeCount.setValue(30);
+        //add timer
+        Timer t = new Timer();
+        addObject(t, 342, 20);
+        
+        //number of the timer
+        Label n = new Label(number, 30);
+        addObject(n, 342, 20);
 
         //add coins
         Coin coin = new Coin();
         addObject(coin, 358, 470);
-        
+
         Coin coin1 = new Coin();
         addObject(coin1, 500, 470);
     }
-    
+
     public void act(){
-       
-    }
+        if (Greenfoot.isKeyDown("up")){
+            start = 1; 
+        }
+        
+        if (start == 1){
+                number--;
+            }
+        }
 }
