@@ -1,10 +1,6 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
-    SimpleTimer tim = new SimpleTimer();
-    Counter timeCount = new Counter();
-    boolean time = true;
-    int start = 0;
     
     public MyWorld() {
         super(680, 520, 1);
@@ -47,8 +43,8 @@ public class MyWorld extends World {
         setBackground("images/gameBG.png");
 
         //add timer 
-        addObject(timeCount, 340, 20);
-        timeCount.setValue(30);
+        //addObject(timeCount, 340, 20);
+        //timeCount.setValue(30);
 
         //add coins
         Coin coin = new Coin();
@@ -59,16 +55,6 @@ public class MyWorld extends World {
     }
     
     public void act(){
-        if (start == 1){
-            if (tim.millisElapsed() > 1000){
-                timeCount.add(-1);
-                tim.mark();
-            }
-        }
-        
-        if (Greenfoot.isKeyDown("right")){
-            start = 1;
-            tim.mark();
-        }
+       
     }
 }
