@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     //changable for timer here
-    int timer = 1000;
+    int timer = 3000;
     public MyWorld() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
