@@ -9,8 +9,14 @@ public class MyWorld extends World {
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
 
-        Water waves = new Water();
-        addObject(waves, 500, 490);
+        Toxin toxin = new Toxin();
+        addObject(toxin, 500, 508);
+        
+        Toxin toxin2 = new Toxin();
+        addObject(toxin2, 370, 506);
+        
+        Toxin toxin3 = new Toxin();
+        addObject(toxin3, 462, 400);
 
         //adding platforms
         Log floor1 = new Log("long");
