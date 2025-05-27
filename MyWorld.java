@@ -66,5 +66,6 @@ public class MyWorld extends World {
         if (timer <= 0){
             Greenfoot.stop();
         }
+        addObject(last1, 600, 95);
     }
 }
