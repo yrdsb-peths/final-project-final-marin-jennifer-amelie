@@ -71,9 +71,14 @@ public class MyWorld extends World {
     }
 
     public void act(){
+        if (gameOver) {
+            return;
+        }
+        
         //add number on timer
         timer--;
         showText(""+timer, 342, 20);
+
         if (timer <= 0){
             Greenfoot.stop();
         }
