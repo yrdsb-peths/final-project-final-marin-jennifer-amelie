@@ -14,7 +14,7 @@ public class MyWorld extends World {
         Toxin toxin = new Toxin(30, 30);
         addObject(toxin, 500, 510);
         
-        Toxin toxin2 = new Toxin(40, 30);
+        Toxin toxin2 = new Toxin(30, 30);
         addObject(toxin2, 340, 510);
         
 
