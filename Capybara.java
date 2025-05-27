@@ -119,6 +119,11 @@ public class Capybara extends Actor
     
     public void act()
     {
+        MyWorld world = (MyWorld) getWorld();
+        if (world.isGameOver()) {
+            return;
+        }
+        
         checkFall();
         if(Greenfoot.isKeyDown("left")){            
             move(-7);
