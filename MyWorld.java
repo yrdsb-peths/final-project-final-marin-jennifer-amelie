@@ -34,6 +34,33 @@ public class MyWorld extends World {
         Log last = new Log("short");
         addObject(last, 200, 95);
         Log last1 = new Log("long");
+
         addObject(last1, 600, 95);
+
+        addObject(last1, 650, 95);
+        setBackground("images/gameBG.png");
+        
+        //portal
+        Portal portal = new Portal();
+        addObject(portal, 650, 50);
+        //add timer 
+        Timer t = new Timer();
+        addObject(t, 342, 20);
+
+        //add coins
+        Coin coin = new Coin();
+        addObject(coin, 358, 450);
+
+        Coin coin1 = new Coin();
+        addObject(coin1, 500, 450);
     }
-}
+
+    public void act(){
+        //add number on timer
+        //timer--;
+        //showText(""+timer, 342, 20);
+        //if (timer <= 0){
+          //  Greenfoot.stop();
+        }
+
+    }
