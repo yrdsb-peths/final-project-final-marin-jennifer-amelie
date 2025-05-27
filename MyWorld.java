@@ -60,6 +60,15 @@ public class MyWorld extends World {
         Coin coin1 = new Coin();
         addObject(coin1, 500, 450);
         
+        Coin coin2 = new Coin();
+        addObject(coin2, 410, 230);
+        
+        Coin coin3 = new Coin();
+        addObject(coin3, 28, 100);
+        
+        Coin coin4 = new Coin();
+        addObject(coin4, 200, 50);
+        
     }
     
     public void setGameOver(boolean value) {
