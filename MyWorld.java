@@ -44,7 +44,7 @@ public class MyWorld extends World {
         Log last = new Log("short");
         addObject(last, 200, 95);
         Log last1 = new Log("long");
-        addObject(last1, 600, 130);
+        addObject(last1, 650, 95);
         setBackground("images/gameBG.png");
 
         //add timer 
@@ -66,6 +66,5 @@ public class MyWorld extends World {
         if (timer <= 0){
             Greenfoot.stop();
         }
-        addObject(last1, 600, 95);
     }
 }
