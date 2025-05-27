@@ -9,10 +9,10 @@ public class MyWorld extends World {
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
 
-        Toxin toxin = new Toxin(30, 20);
-        addObject(toxin, 500, 515);
+        Toxin toxin = new Toxin(30, 30);
+        addObject(toxin, 500, 510);
         
-        Toxin toxin2 = new Toxin(30, 30);
+        Toxin toxin2 = new Toxin(40, 30);
         addObject(toxin2, 340, 510);
         
 
