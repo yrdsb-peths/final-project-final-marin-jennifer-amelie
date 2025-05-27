@@ -1,6 +1,8 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
+    private boolean gameOver = false;
+    
     //changable for timer here
     int timer = 3000;
     public MyWorld() {
@@ -57,6 +59,15 @@ public class MyWorld extends World {
 
         Coin coin1 = new Coin();
         addObject(coin1, 500, 450);
+        
+    }
+    
+    public void setGameOver(boolean value) {
+        gameOver = value;
+    }
+    
+    public boolean isGameOver() {
+        return gameOver;
     }
 
     public void act(){
