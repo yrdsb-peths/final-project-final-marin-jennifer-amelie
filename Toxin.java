@@ -11,10 +11,10 @@ public class Toxin extends Actor
     GreenfootImage[] toxin = new GreenfootImage[48];
     SimpleTimer animationTimer = new SimpleTimer();
     
-    public Toxin() {
+    public Toxin(int width, int height) {
         for(int i = 0; i<toxin.length; i++){
            toxin[i] = new GreenfootImage("images/toxinAnimation2/frame_"+(i)+"_delay-0.01s.gif");
-           toxin[i].scale(85, 30);
+           toxin[i].scale(width, height);
        }
        animationTimer.mark();
        setImage(toxin[0]);
@@ -33,8 +33,9 @@ public class Toxin extends Actor
     public void act()
     {
         toxing();
-        //if (isTouching(Capybara.class)) {
-            //getWorld().addObject(
-        //}
+        if (isTouching(Capybara.class)) {
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            getWorld().addObject(new GameOverLabel(gameOverImage), getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+        }
     }
 }

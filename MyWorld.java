@@ -2,25 +2,23 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     //changable for timer here
-    int timer = 1000;
+    int timer = 3000;
     public MyWorld() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
 
-        Toxin toxin = new Toxin();
-        addObject(toxin, 500, 508);
+        Toxin toxin = new Toxin(30, 30);
+        addObject(toxin, 500, 510);
         
-        Toxin toxin2 = new Toxin();
-        addObject(toxin2, 370, 506);
+        Toxin toxin2 = new Toxin(40, 30);
+        addObject(toxin2, 340, 510);
         
-        Toxin toxin3 = new Toxin();
-        addObject(toxin3, 462, 400);
 
         //adding platforms
-        Log floor1 = new Log("long");
-        addObject(floor1, 0, 515);
+        Log floor1 = new Log("med");
+        addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
         addObject(floor2, 430, 515);
         Log floor3 = new Log("short");
@@ -55,10 +53,10 @@ public class MyWorld extends World {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 358, 470);
+        addObject(coin, 358, 450);
 
         Coin coin1 = new Coin();
-        addObject(coin1, 500, 470);
+        addObject(coin1, 500, 450);
     }
 
     public void act(){
