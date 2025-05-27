@@ -33,5 +33,8 @@ public class Toxin extends Actor
     public void act()
     {
         toxing();
+        //if (isTouching(Capybara.class)) {
+            //getWorld().addObject(
+        //}
     }
 }

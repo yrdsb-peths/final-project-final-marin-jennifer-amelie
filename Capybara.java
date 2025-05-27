@@ -169,6 +169,9 @@ public class Capybara extends Actor
         Actor ground = getOneObjectAtOffset(0, lookForGround, Log.class);
         if (ground == null) {
             ground = getOneObjectAtOffset(0, lookForGround, Water.class);
+        } 
+        if (ground == null) {
+            ground = getOneObjectAtOffset(0, lookForGround, Toxin.class);
         }
 
         if (ground == null) {
