@@ -14,7 +14,7 @@ public class MyWorld extends World {
         Toxin toxin = new Toxin(30, 30);
         addObject(toxin, 500, 510);
         
-        Toxin toxin2 = new Toxin(40, 30);
+        Toxin toxin2 = new Toxin(30, 30);
         addObject(toxin2, 340, 510);
         
 
@@ -80,9 +80,14 @@ public class MyWorld extends World {
     }
 
     public void act(){
+        if (gameOver) {
+            return;
+        }
+        
         //add number on timer
         timer--;
         showText(""+timer, 342, 20);
+
         if (timer <= 0){
             Greenfoot.stop();
         }
