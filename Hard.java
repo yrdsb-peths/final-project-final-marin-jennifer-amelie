@@ -15,7 +15,7 @@ public class Hard extends World
      */
     public Hard()
     {    
-        super(800, 600, 1);
+        super(700, 600, 1);
         setBackground("levels/hard.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 150, 100);
