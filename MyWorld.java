@@ -1,8 +1,8 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
-    int number = 30;
-    int start = 0;
+    //changable for timer here
+    int timer = 1000;
     public MyWorld() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -43,13 +43,9 @@ public class MyWorld extends World {
         addObject(last1, 600, 100);
         setBackground("images/gameBG.png");
 
-        //add timer
+        //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
-        
-        //number of the timer
-        Label n = new Label(number, 30);
-        addObject(n, 342, 20);
 
         //add coins
         Coin coin = new Coin();
@@ -60,12 +56,11 @@ public class MyWorld extends World {
     }
 
     public void act(){
-        if (Greenfoot.isKeyDown("up")){
-            start = 1; 
+        //add number on timer
+        timer--;
+        showText(""+timer, 342, 20);
+        if (timer <= 0){
+            Greenfoot.stop();
         }
-        
-        if (start == 1){
-                number--;
-            }
-        }
+    }
 }
