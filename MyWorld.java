@@ -61,7 +61,7 @@ public class MyWorld extends World {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 358, 450);
+        addObject(coin, 330, 450);
 
         Coin coin1 = new Coin();
         addObject(coin1, 500, 450);
@@ -70,7 +70,7 @@ public class MyWorld extends World {
         addObject(coin2, 410, 230);
         
         Coin coin3 = new Coin();
-        addObject(coin3, 28, 100);
+        addObject(coin3, 30, 75);
         
         Coin coin4 = new Coin();
         addObject(coin4, 200, 50);
