@@ -75,6 +75,9 @@ public class MyWorld extends World {
         Coin coin4 = new Coin();
         addObject(coin4, 200, 50);
         
+        Coin coin5 = new Coin();
+        addObject(coin5, 50, 300);
+        
     }
     
     public void setGameOver(boolean value) {
@@ -97,4 +100,8 @@ public class MyWorld extends World {
         if (timer <= 0){
             Greenfoot.stop();
         }
+        
+        //Collecting Coins
+        
     }
+}

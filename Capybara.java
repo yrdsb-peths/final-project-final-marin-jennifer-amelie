@@ -147,6 +147,8 @@ public class Capybara extends Actor
             jump();
             // add a jumping sound
             
+            //collect coins 
+            collectCoins();
         }
         idleCapybara();
     }
@@ -191,6 +193,13 @@ public class Capybara extends Actor
         
         setLocation(getX(), newY);
         jumping = false;
+    }
+    
+    //when touches, remove the coin
+    public void collectCoins(){
+        if(isTouching(Coin.class)){
+            removeTouching(Coin.class);
+        }
     }
     
 }
