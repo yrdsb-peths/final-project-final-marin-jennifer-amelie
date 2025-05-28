@@ -11,18 +11,18 @@ public class MyWorld extends World {
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
 
-        Toxin toxin = new Toxin(30, 30);
-        addObject(toxin, 500, 510);
+        Toxin toxin = new Toxin(60, 15);
+        addObject(toxin, 495, 510);
         
-        Toxin toxin2 = new Toxin(30, 30);
-        addObject(toxin2, 340, 510);
+        Toxin toxin2 = new Toxin(90, 15);
+        addObject(toxin2, 330, 510);
         
 
         //adding platforms
         Log floor1 = new Log("med");
         addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
-        addObject(floor2, 430, 515);
+        addObject(floor2, 420, 515);
         Log floor3 = new Log("short");
         addObject(floor3, 570, 515);
         Log floor4 = new Log("stump");
