@@ -30,7 +30,7 @@ public class Easy extends World
         addObject(floor3, 760, 540);
         
         Log fs = new Log("long");
-        addObject(fs, 350, 425);
+        addObject(fs, 400, 425);
         Log fs1 = new Log("stump");
         addObject(fs1, 50, 370);
         
