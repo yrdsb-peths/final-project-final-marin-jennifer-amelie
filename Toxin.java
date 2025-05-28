@@ -34,10 +34,6 @@ public class Toxin extends Actor
     {
         MyWorld world = (MyWorld) getWorld();
 
-        if (world.isGameOver()) {
-            return; 
-        }
-
         toxing();
         if (isTouching(Capybara.class)) {
             world.setGameOver(true);

@@ -53,5 +53,18 @@ public class Easy extends World
         //portal
         Portal portal = new Portal();
         addObject(portal, 100, 90);
+        
+        // toxin
+        Toxin toxin = new Toxin(105, 15);
+        addObject(toxin, 200, 575);
+        
+        Toxin toxin2 = new Toxin(100, 15);
+        addObject(toxin2, 575, 575);
+        
+        Toxin toxin3 = new Toxin(90, 15);
+        addObject(toxin3, 310, 320);
+        
+        Toxin toxin4 = new Toxin(100, 15);
+        addObject(toxin4, 500, 320);
     }
 }
