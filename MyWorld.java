@@ -98,3 +98,4 @@ public class MyWorld extends World {
             Greenfoot.stop();
         }
     }
+}

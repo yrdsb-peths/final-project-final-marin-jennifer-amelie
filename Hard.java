@@ -16,6 +16,7 @@ public class Hard extends World
     public Hard()
     {    
         super(700, 600, 1);
+        
         setBackground("levels/hard.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 150, 100);
@@ -52,5 +53,15 @@ public class Hard extends World
         //portal
         Portal portal = new Portal();
         addObject(portal, 250, 225);
+        
+        // toxin
+        Toxin toxin = new Toxin(110, 15);
+        addObject(toxin, 250, 150);
+        
+        Toxin toxin2 = new Toxin(155, 15);
+        addObject(toxin2, 225, 580);
+        
+        Toxin toxin3 = new Toxin(120, 15);
+        addObject(toxin3, 450, 580);
     }
 }
