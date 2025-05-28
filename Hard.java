@@ -48,5 +48,9 @@ public class Hard extends World
         addObject(last, 0, 350);
         Log temp = new Log("short");
         addObject(temp, 250, 275);
+        
+        //portal
+        Portal portal = new Portal();
+        addObject(portal, 250, 225);
     }
 }

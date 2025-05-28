@@ -49,5 +49,9 @@ public class Easy extends World
         addObject(last1, 375, 140);
         Log last2 = new Log("short");
         addObject(last2, 100, 125);
+        
+        //portal
+        Portal portal = new Portal();
+        addObject(portal, 100, 90);
     }
 }
