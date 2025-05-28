@@ -26,8 +26,10 @@ public class MyWorld extends World {
         Log snd = new Log("med");
         addObject(snd, 450, 290);
         
-        Log ths = new Log("med");
-        addObject(ths, 150, 220);
+        Log ths = new Log("short");
+        addObject(ths, 250, 220);
+        Log ths2 = new Log("short");
+        addObject(ths2, 150, 220);
         Log ths1 = new Log("stump");
         addObject(ths1, 50, 175);
         
