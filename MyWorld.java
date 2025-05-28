@@ -4,7 +4,7 @@ public class MyWorld extends World {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3000;
+    int timer = 3050;
     public MyWorld() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -77,7 +77,7 @@ public class MyWorld extends World {
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
-        
+
     }
     
     public void setGameOver(boolean value) {
@@ -95,7 +95,7 @@ public class MyWorld extends World {
         
         //add number on timer
         timer--;
-        showText(""+timer, 342, 20);
+        showText(""+timer / 100, 342, 20);
 
         if (timer <= 0){
             Greenfoot.stop();
