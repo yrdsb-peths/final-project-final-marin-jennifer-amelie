@@ -14,8 +14,15 @@ public class RestartButton extends Button {
 
     public void act() {
         super.act();
+        World current = getWorld();
         if (isClicked()) {
-            Greenfoot.setWorld(new MyWorld());
+            if (current instanceof Easy) {
+                Greenfoot.setWorld(new Easy());
+            } else if (current instanceof Medium) {
+                Greenfoot.setWorld(new Medium());
+            } else if (current instanceof Hard) {
+                Greenfoot.setWorld(new Hard());
+            }
         }
     }
 }
