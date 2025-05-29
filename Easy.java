@@ -19,6 +19,9 @@ public class Easy extends World
         setBackground("levels/easy.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 550);
+        //switches
+        Switch one = new Switch();
+        addObject(one, 570, 115);
         //adding platforms
         Log floor = new Log("med");
         addObject(floor, 10, 575);

@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Switch extends Actor
 {
     public Switch(){
-        GreenfootImage Lswitch = new GreenfootImage("images/
+        GreenfootImage Rswitch = new GreenfootImage("images/switch/Rswitch.png");
+        Rswitch.scale(60,60);
+        setImage(Rswitch);
     }
     /**
      * Act - do whatever the Switch wants to do. This method is called whenever
