@@ -77,6 +77,15 @@ public class MyWorld extends World {
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
+        
+        //add the bird
+        Bird bird = new Bird();
+        addObject(bird, 560, 115);
+        
+        //add the badGuy
+        BadGuy b = new BadGuy();
+        addObject(b, 600, 240);
+
 
     }
     
