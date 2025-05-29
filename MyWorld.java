@@ -61,14 +61,6 @@ public class MyWorld extends World {
         addObject(coin1, 500, 450);
         
     }
-    
-    public void setGameOver(boolean value) {
-        gameOver = value;
-    }
-    
-    public boolean isGameOver() {
-        return gameOver;
-    }
 
     public void act(){
         if (gameOver) {

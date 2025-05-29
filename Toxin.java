@@ -32,7 +32,7 @@ public class Toxin extends Actor
     }
     public void act()
     {
-        MyWorld world = (MyWorld) getWorld();
+        MainWorld world = (MainWorld) getWorld();
 
         if (world.isGameOver()) {
             return; 

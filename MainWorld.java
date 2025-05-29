@@ -1,11 +1,20 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Easy extends MainWorld {
+/**
+ * Write a description of class MainWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MainWorld extends World
+{
     private boolean gameOver = false;
     
     //changable for timer here
     int timer = 3000;
-    public Easy() {
+
+    public MainWorld()
+    {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
         Capybara capybara = new Capybara();
@@ -44,13 +53,6 @@ public class Easy extends MainWorld {
         addObject(ths1, 50, 175);
         
         Log last = new Log("short");
-<<<<<<< Updated upstream
-        addObject(last, 570, 140);
-        Log last1 = new Log("med");
-        addObject(last1, 375, 140);
-        Log last2 = new Log("short");
-        addObject(last2, 100, 125);
-=======
         addObject(last, 200, 95);
         Log last1 = new Log("long");
 
@@ -84,9 +86,21 @@ public class Easy extends MainWorld {
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
-        
     }
-
+    
+    public MainWorld(int width, int height, int cellSize)
+    {    
+        super(width, height, cellSize);
+    }
+    
+    public void setGameOver(boolean value) {
+        gameOver = value;
+    }
+    
+    public boolean isGameOver() {
+        return gameOver;
+    }
+    
     public void act(){
         if (gameOver) {
             return;
@@ -102,6 +116,6 @@ public class Easy extends MainWorld {
         
         //Collecting Coins
         
->>>>>>> Stashed changes
     }
 }
+
