@@ -20,11 +20,11 @@ public class MyWorld extends World {
 
         //adding platforms
         Log floor1 = new Log("med");
-        addObject(floor1, 150, 515);
+        addObject(floor1, 150, 505);
         Log floor2 = new Log("short");
-        addObject(floor2, 420, 515);
+        addObject(floor2, 420, 505);
         Log floor3 = new Log("short");
-        addObject(floor3, 570, 515);
+        addObject(floor3, 570, 505);
         Log floor4 = new Log("stump");
         addObject(floor4, 640, 500);
         
