@@ -54,17 +54,6 @@ public class Easy extends MainWorld {
         Portal portal = new Portal();
         addObject(portal, 100, 90);
         
-        // toxin
-        
-        Toxin toxin1 = new Toxin(100, 15);
-        addObject(toxin1, 575, 575);
-        
-        Toxin toxin3 = new Toxin(90, 15);
-        addObject(toxin3, 310, 320);
-        
-        Toxin toxin4 = new Toxin(100, 15);
-        addObject(toxin4, 500, 320);
-        
         addObject(last, 200, 95);
         Log last10 = new Log("long");
 
