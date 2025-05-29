@@ -4,7 +4,7 @@ public class Easy extends MainWorld {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3000;
+    int timer = 3050;
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -71,7 +71,7 @@ public class Easy extends MainWorld {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 358, 450);
+        addObject(coin, 330, 440);
 
         Coin coin1 = new Coin();
         addObject(coin1, 500, 450);
@@ -88,6 +88,14 @@ public class Easy extends MainWorld {
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
         
+        //add the bird
+        Bird bird = new Bird();
+        addObject(bird, 585, 130);
+        
+        //add the badGuy
+        BadGuy b = new BadGuy();
+        //addObject(b, 600, 240);
+        
     }
 
     public void act(){
@@ -97,7 +105,7 @@ public class Easy extends MainWorld {
         
         //add number on timer
         timer--;
-        showText(""+timer, 342, 20);
+        showText(""+timer / 100, 342, 20);
 
         if (timer <= 0){
             Greenfoot.stop();
@@ -105,6 +113,5 @@ public class Easy extends MainWorld {
         
         //Collecting Coins
         
-
     }
 }
