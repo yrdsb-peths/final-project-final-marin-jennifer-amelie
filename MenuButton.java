@@ -15,7 +15,7 @@ public class MenuButton extends Button {
     public void act() {
         super.act();
         if (isClicked()) {
-            Greenfoot.setWorld(new Menu()); // Replace MenuWorld with your actual menu world
+            Greenfoot.setWorld(new Menu());
         }
     }
 }

@@ -1,11 +1,20 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class MyWorld extends World {
+/**
+ * Write a description of class MainWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MainWorld extends World
+{
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3050;
-    public MyWorld() {
+    int timer = 3000;
+
+    public MainWorld()
+    {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
         Capybara capybara = new Capybara();
@@ -20,11 +29,11 @@ public class MyWorld extends World {
 
         //adding platforms
         Log floor1 = new Log("med");
-        addObject(floor1, 150, 505);
+        addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
-        addObject(floor2, 420, 505);
+        addObject(floor2, 420, 515);
         Log floor3 = new Log("short");
-        addObject(floor3, 570, 505);
+        addObject(floor3, 570, 515);
         Log floor4 = new Log("stump");
         addObject(floor4, 640, 500);
         
@@ -61,7 +70,7 @@ public class MyWorld extends World {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 330, 450);
+        addObject(coin, 358, 450);
 
         Coin coin1 = new Coin();
         addObject(coin1, 500, 450);
@@ -70,16 +79,28 @@ public class MyWorld extends World {
         addObject(coin2, 410, 230);
         
         Coin coin3 = new Coin();
-        addObject(coin3, 30, 75);
+        addObject(coin3, 28, 100);
         
         Coin coin4 = new Coin();
         addObject(coin4, 200, 50);
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
-
     }
-
+    
+    public MainWorld(int width, int height, int cellSize)
+    {    
+        super(width, height, cellSize);
+    }
+    
+    public void setGameOver(boolean value) {
+        gameOver = value;
+    }
+    
+    public boolean isGameOver() {
+        return gameOver;
+    }
+    
     public void act(){
         if (gameOver) {
             return;
@@ -87,7 +108,7 @@ public class MyWorld extends World {
         
         //add number on timer
         timer--;
-        showText(""+timer / 100, 342, 20);
+        showText(""+timer, 342, 20);
 
         if (timer <= 0){
             Greenfoot.stop();
@@ -97,3 +118,4 @@ public class MyWorld extends World {
         
     }
 }
+
