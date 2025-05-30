@@ -13,5 +13,8 @@ public class Ending extends World
         super(600, 400, 1);
         MrBigRender mr = new MrBigRender();
         addObject(mr, 480, 250);
+        
+        Bara bara = new Bara();
+        addObject(bara, 100, 250);
     }
 }
