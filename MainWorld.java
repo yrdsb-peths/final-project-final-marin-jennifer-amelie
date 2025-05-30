@@ -11,7 +11,7 @@ public class MainWorld extends World
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3000;
+    int timer = 3050;
 
     public MainWorld()
     {
@@ -108,7 +108,7 @@ public class MainWorld extends World
         
         //add number on timer
         timer--;
-        showText(""+timer, 342, 20);
+        showText(""+timer / 100, 342, 20);
 
         if (timer <= 0){
             Greenfoot.stop();
