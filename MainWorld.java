@@ -11,7 +11,7 @@ public class MainWorld extends World
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3000;
+    int timer = 3050;
 
     public MainWorld()
     {
@@ -32,7 +32,7 @@ public class MainWorld extends World
     }
     
     public void act(){
-        
+
     }
 }
 
