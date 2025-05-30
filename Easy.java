@@ -71,10 +71,10 @@ public class Easy extends MainWorld {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 330, 450);
+        addObject(coin, 330, 440);
 
         Coin coin1 = new Coin();
-        addObject(coin1, 490, 450);
+        addObject(coin1, 490, 440);
         
         Coin coin2 = new Coin();
         addObject(coin2, 410, 230);
