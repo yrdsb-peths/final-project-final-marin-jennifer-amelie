@@ -19,29 +19,40 @@ public class Medium extends MainWorld
         
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 485);
+        
+        // toxin
+        Toxin toxin = new Toxin(80, 15);
+        addObject(toxin, 195, 575);
+        
+        Toxin toxin2 = new Toxin(100, 15);
+        addObject(toxin2, 550, 575);
+        
+        Toxin toxin3 = new Toxin(270, 15);
+        addObject(toxin3, 395, 285);
+        
         //adding platforms
         Log floor = new Log("med");
         addObject(floor, 10, 575);
         Log floor1 = new Log("med");
-        addObject(floor1, 390, 575);
-        Log floor2 = new Log("short");
-        addObject(floor2, 670, 575);
+        addObject(floor1, 375, 575);
         Log floor3 = new Log("stump");
-        addObject(floor3, 760, 540);
+        addObject(floor3, 640, 540);
         
-        Log fs = new Log("long");
-        addObject(fs, 350, 425);
+        Log fs = new Log("med");
+        addObject(fs, 450, 425);
         Log fs1 = new Log("stump");
-        addObject(fs1, 50, 370);
+        addObject(fs1, 100, 350);
+        Log fs2 = new Log("short");
+        addObject(fs2, 175, 425);
         
         Log sd = new Log("short");
-        addObject(sd, 220, 325);
+        addObject(sd, 220, 285);
         Log sd1 = new Log("short");
-        addObject(sd1, 400, 300);
+        addObject(sd1, 400, 260);
         Log sd2 = new Log("short");
-        addObject(sd2, 610, 325);
+        addObject(sd2, 575, 285);
         Log sd3 = new Log("stump");
-        addObject(sd3, 725, 250);
+        addObject(sd3, 725, 210);
         
         Log last = new Log("short");
         addObject(last, 570, 140);
@@ -54,17 +65,5 @@ public class Medium extends MainWorld
         Portal portal = new Portal();
         addObject(portal, 100, 90);
         
-        // toxin
-        Toxin toxin = new Toxin(100, 15);
-        addObject(toxin, 200, 575);
-        
-        Toxin toxin2 = new Toxin(100, 15);
-        addObject(toxin2, 575, 575);
-        
-        Toxin toxin3 = new Toxin(90, 15);
-        addObject(toxin3, 310, 320);
-        
-        Toxin toxin4 = new Toxin(100, 15);
-        addObject(toxin4, 500, 320);
     }
 }

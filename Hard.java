@@ -20,7 +20,7 @@ public class Hard extends MainWorld
         Log floor1 = new Log("short");
         addObject(floor1, 350, 580);
         Log floor2 = new Log("short");
-        addObject(floor2, 550, 580);
+        addObject(floor2, 515, 580);
         
         Log stump = new Log("stump");
         addObject(stump, 600, 485);
@@ -30,9 +30,9 @@ public class Hard extends MainWorld
         addObject(stump2, 550, 200);
         
         Log top = new Log("short");
-        addObject(top, 350, 150);
+        addObject(top, 360, 150);
         Log top1 = new Log("short");
-        addObject(top1, 150, 150);
+        addObject(top1, 160, 150);
         
         Log mid = new Log("med");
         addObject(mid, 300, 450);
@@ -50,12 +50,12 @@ public class Hard extends MainWorld
         
         // toxin
         Toxin toxin = new Toxin(110, 15);
-        addObject(toxin, 250, 150);
+        addObject(toxin, 260, 150);
         
         Toxin toxin2 = new Toxin(155, 15);
         addObject(toxin2, 225, 580);
         
-        Toxin toxin3 = new Toxin(120, 15);
-        addObject(toxin3, 450, 580);
+        Toxin toxin3 = new Toxin(80, 15);
+        addObject(toxin3, 430, 580);
     }
 }

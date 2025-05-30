@@ -11,22 +11,22 @@ public class Easy extends MainWorld {
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 475);
 
-        Toxin toxin = new Toxin(60, 15);
-        addObject(toxin, 495, 510);
+        Toxin toxin = new Toxin(70, 10);
+        addObject(toxin, 487, 510);
         
-        Toxin toxin2 = new Toxin(90, 15);
-        addObject(toxin2, 330, 510);
+        Toxin toxin2 = new Toxin(70, 10);
+        addObject(toxin2, 325, 510);
         
 
         //adding platforms
         Log floor1 = new Log("med");
         addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
-        addObject(floor2, 420, 515);
+        addObject(floor2, 405, 515);
         Log floor3 = new Log("short");
         addObject(floor3, 570, 515);
         Log floor4 = new Log("stump");
-        addObject(floor4, 640, 500);
+        addObject(floor4, 650, 500);
         
         Log first = new Log("short");
         addObject(first, 550, 400);
@@ -36,23 +36,23 @@ public class Easy extends MainWorld {
         addObject(first2, 150, 370);
         
         Log snd = new Log("med");
-        addObject(snd, 450, 290);
+        addObject(snd, 500, 290);
         
         Log ths = new Log("med");
-        addObject(ths, 150, 220);
+        addObject(ths, 230, 200);
         Log ths1 = new Log("stump");
         addObject(ths1, 50, 175);
         
         Log last = new Log("short");
         addObject(last, 570, 140);
         Log last1 = new Log("med");
-        addObject(last1, 375, 140);
+        addObject(last1, 375, 100);
         Log last2 = new Log("short");
-        addObject(last2, 100, 125);
+        addObject(last2, 175, 100);
         
         //portal
         Portal portal = new Portal();
-        addObject(portal, 100, 90);
+        addObject(portal, 500, 60);
         
         addObject(last, 200, 95);
         Log last10 = new Log("long");
