@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Capybara here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Capybara extends Actor
 {
     public int vSpeed;
@@ -149,6 +143,10 @@ public class Capybara extends Actor
             
             //collect coins 
             collectCoins();
+            
+            //going to the ending
+            goToEnd();
+            
         }
         idleCapybara();
     }
@@ -202,4 +200,10 @@ public class Capybara extends Actor
         }
     }
     
+    public void goToEnd(){
+        if(isTouching(Portal.class)){
+            Ending end = new Ending();
+            Greenfoot.setWorld(end);
+        }
+    }
 }
