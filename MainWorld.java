@@ -16,7 +16,6 @@ public class MainWorld extends World
     public MainWorld()
     {
         super(680, 520, 1);
-        
     }
     
     public MainWorld(int width, int height, int cellSize)
@@ -33,19 +32,6 @@ public class MainWorld extends World
     }
     
     public void act(){
-        if (gameOver) {
-            return;
-        }
-        
-        //add number on timer
-        timer--;
-        showText(""+timer, 342, 20);
-
-        if (timer <= 0){
-            Greenfoot.stop();
-        }
-        
-        //Collecting Coins
         
     }
 }

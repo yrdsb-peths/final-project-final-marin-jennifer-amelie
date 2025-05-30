@@ -23,8 +23,8 @@ public class TitleScreen extends World
      */
     public void act(){
         if(Greenfoot.isKeyDown("space")){
-            Menu menu = new Menu();
-            Greenfoot.setWorld(menu);
+            MainWorld world = new MainWorld();
+            Greenfoot.setWorld(world);
         }
     }
 
