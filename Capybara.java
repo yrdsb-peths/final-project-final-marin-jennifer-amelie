@@ -19,6 +19,10 @@ public class Capybara extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     
+    // number of coins being collected 
+    public int coinsNum = 0;
+
+    
     /**
      * constructor - code gets run first time instance created
      */
@@ -147,6 +151,7 @@ public class Capybara extends Actor
             //going to the ending
             goToEnd();
             
+            endPart();
         }
         idleCapybara();
     }
@@ -193,10 +198,12 @@ public class Capybara extends Actor
         jumping = false;
     }
     
-    //when touches, remove the coin
+    //when touches, remove the coin, add the number of coins being collected 
     public void collectCoins(){
+        int coins = 0;
         if(isTouching(Coin.class)){
             removeTouching(Coin.class);
+            coins++; 
         }
     }
     
@@ -204,6 +211,14 @@ public class Capybara extends Actor
         if(isTouching(Portal.class)){
             Ending end = new Ending();
             Greenfoot.setWorld(end);
+        }
+    }
+    
+    public void endPart(){
+        if(isTouching(MrBigRender.class)){
+            if(coinsNum == 1){
+                removeTouching(MrBigRender.class);
+            }
         }
     }
 }

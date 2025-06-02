@@ -1,17 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MainWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MainWorld extends World
 {
     private boolean gameOver = false;
     
     //changable for timer here
     int timer = 3050;
+    
 
     public MainWorld()
     {
@@ -32,7 +27,7 @@ public class MainWorld extends World
     }
     
     public void act(){
-
+        
     }
 }
 
