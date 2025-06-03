@@ -12,13 +12,18 @@ public class Portal extends Actor
     {
         MainWorld world = (MainWorld) getWorld();
         if (isTouching(Capybara.class)) {
-            world.setGameOver(true);
-            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
-            getWorld().addObject(new GameOverLabel(gameOverImage), getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-            
-            getWorld().addObject(new RestartButton(), getWorld().getWidth() / 2 - 100, getWorld().getHeight() / 2 + 80);
-            getWorld().addObject(new MenuButton(), getWorld().getWidth() / 2 + 100, getWorld().getHeight() / 2 + 80);
-
+            if(world.equals("Easy")){
+                Medium world2 = new Medium();
+                Greenfoot.setWorld(world2);
+            }
+            if(world.equals("Medium")){
+                Hard world2 = new Hard();
+                Greenfoot.setWorld(world2);
+            }
+            if(world.equals("Hard")){
+                Ending world2 = new Ending();
+                Greenfoot.setWorld(world2);
+            }
         }
     }
 }
