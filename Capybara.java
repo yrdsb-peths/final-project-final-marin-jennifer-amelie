@@ -156,8 +156,6 @@ public class Capybara extends Actor
         //going to the ending
         goToEnd();
             
-        endPart();
-            
         idleCapybara();
     }
     
@@ -205,15 +203,13 @@ public class Capybara extends Actor
     
     public void goToEnd(){
         if(isTouching(Portal.class)){
-            Ending end = new Ending();
-            Greenfoot.setWorld(end);
-        }
-    }
-    
-    public void endPart(){
-        if(isTouching(MrBigRender.class)){
             if(coinsNum == 6){
-                removeTouching(MrBigRender.class);
+                Ending end = new Ending();
+                Greenfoot.setWorld(end);
+            }
+            else{
+                Ending2 end2 = new Ending2();
+                Greenfoot.setWorld(end2);
             }
         }
     }
