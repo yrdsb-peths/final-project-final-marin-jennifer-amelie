@@ -101,7 +101,13 @@ public class Easy extends MainWorld {
         showText(""+timer / 100, 342, 20);
 
         if (timer <= 0){
-            Greenfoot.stop();
+            setGameOver(true);
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
+            
+            addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
+
         }
         
         //Collecting Coins

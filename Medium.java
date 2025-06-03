@@ -23,25 +23,27 @@ public class Medium extends MainWorld
         Log floor = new Log("med");
         addObject(floor, 10, 575);
         Log floor1 = new Log("med");
-        addObject(floor1, 390, 575);
+        addObject(floor1, 380, 575);
         Log floor2 = new Log("short");
         addObject(floor2, 670, 575);
         Log floor3 = new Log("stump");
         addObject(floor3, 760, 540);
         
-        Log fs = new Log("long");
-        addObject(fs, 350, 425);
+        Log fs = new Log("med");
+        addObject(fs, 420, 425);
+        Log fs2 = new Log("short");
+        addObject(fs2, 180, 425);
         Log fs1 = new Log("stump");
-        addObject(fs1, 50, 370);
+        addObject(fs1, 50, 350);
         
         Log sd = new Log("short");
-        addObject(sd, 220, 325);
+        addObject(sd, 220, 290);
         Log sd1 = new Log("short");
-        addObject(sd1, 400, 300);
+        addObject(sd1, 400, 275);
         Log sd2 = new Log("short");
-        addObject(sd2, 610, 325);
+        addObject(sd2, 580, 290);
         Log sd3 = new Log("stump");
-        addObject(sd3, 725, 250);
+        addObject(sd3, 725, 225);
         
         Log last = new Log("short");
         addObject(last, 570, 140);
@@ -55,16 +57,13 @@ public class Medium extends MainWorld
         addObject(portal, 100, 90);
         
         // toxin
-        Toxin toxin = new Toxin(100, 15);
-        addObject(toxin, 200, 575);
+        Toxin toxin = new Toxin(90, 15);
+        addObject(toxin, 190, 575);
         
-        Toxin toxin2 = new Toxin(100, 15);
+        Toxin toxin2 = new Toxin(110, 15);
         addObject(toxin2, 575, 575);
         
-        Toxin toxin3 = new Toxin(90, 15);
-        addObject(toxin3, 310, 320);
-        
-        Toxin toxin4 = new Toxin(100, 15);
-        addObject(toxin4, 500, 320);
+        Toxin toxin3 = new Toxin(270, 10);
+        addObject(toxin3, 400, 290);
     }
 }

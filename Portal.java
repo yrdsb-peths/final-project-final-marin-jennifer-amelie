@@ -13,12 +13,12 @@ public class Portal extends Actor
         MainWorld world = (MainWorld) getWorld();
         if (isTouching(Capybara.class)) {
             if(world.equals("Easy")){
-                Medium world2 = new Medium();
-                Greenfoot.setWorld(world2);
+                Medium med = new Medium();
+                Greenfoot.setWorld(med);
             }
             if(world.equals("Medium")){
-                Hard world2 = new Hard();
-                Greenfoot.setWorld(world2);
+                Hard ha = new Hard();
+                Greenfoot.setWorld(ha);
             }
             if(world.equals("Hard")){
                 Ending world2 = new Ending();
