@@ -10,6 +10,7 @@ public class Scene1 extends MainWorld
 {
     private Kingbara kingbara;
     private Birdie birdie;
+    private Boolean timeYet = false;
 
     Label label1 = new Label("A long time ago, in Solcieleux, a kingdom", 30);
     Label label2 = new Label("characterized by its striking beauty of the sky", 30);
@@ -51,6 +52,14 @@ public class Scene1 extends MainWorld
         }
         if (animationTimer.millisElapsed() > 8000) {  
             addObject(label5, 550, 500);
+            timeYet = true;
+        }
+        
+        if (timeYet) {
+            if(Greenfoot.isKeyDown("right")){
+            Scene2 world = new Scene2();
+            Greenfoot.setWorld(world);
+            }
         }
     }
 }
