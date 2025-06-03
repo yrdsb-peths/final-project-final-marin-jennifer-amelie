@@ -53,7 +53,7 @@ public class Easy extends MainWorld {
         
         //portal
         Portal portal = new Portal();
-        addObject(portal, 100, 90);
+        addObject(portal, 450, 100);
         
         addObject(last, 200, 95);
         Log last10 = new Log("long");
