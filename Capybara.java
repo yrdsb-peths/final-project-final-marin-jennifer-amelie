@@ -144,16 +144,20 @@ public class Capybara extends Actor
             }
             jumpCapybara();
             jump();
+        }
             // add a jumping sound
             
-            //collect coins 
-            collectCoins();
-            
-            //going to the ending
-            goToEnd();
-            
-            endPart();
+        //collect coins 
+        if(isTouching(Coin.class)){
+            removeTouching(Coin.class);
+            coinsNum++;
         }
+            
+        //going to the ending
+        goToEnd();
+            
+        endPart();
+            
         idleCapybara();
     }
     
@@ -199,15 +203,6 @@ public class Capybara extends Actor
         jumping = false;
     }
     
-    //when touches, remove the coin, add the number of coins being collected 
-    public void collectCoins(){
-        int coins = 0;
-        if(isTouching(Coin.class)){
-            removeTouching(Coin.class);
-            coins++; 
-        }
-    }
-    
     public void goToEnd(){
         if(isTouching(Portal.class)){
             Ending end = new Ending();
@@ -217,7 +212,7 @@ public class Capybara extends Actor
     
     public void endPart(){
         if(isTouching(MrBigRender.class)){
-            if(coinsNum == 1){
+            if(coinsNum == 6){
                 removeTouching(MrBigRender.class);
             }
         }
