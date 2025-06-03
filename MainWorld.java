@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MainWorld extends World
 {
     private boolean gameOver = false;
-    private Capybara capybara;
+    private Kingbara kingbara;
+    
 
     
     Label label1 = new Label("A long time ago, in Solcieleux, a kingdom", 30);
@@ -27,10 +28,9 @@ public class MainWorld extends World
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
-        addObject(label1, 300, 40);
         
-        capybara = new Capybara();
-        addObject(capybara, 400, 550); 
+        kingbara = new Kingbara();
+        addObject(kingbara, 400, 550); 
 
     }
     
@@ -48,7 +48,11 @@ public class MainWorld extends World
     }
     
     public void act(){
-        capybara.kingbara();
+        kingbara.kingbara();
+        
+        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+            addObject(label1, 300, 40);
+        }
         if (animationTimer.millisElapsed() > 2000) {  // after 2 seconds
             addObject(label2, 335, 80);
         }
