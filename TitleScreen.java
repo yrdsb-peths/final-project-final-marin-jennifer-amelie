@@ -23,7 +23,7 @@ public class TitleScreen extends World
      */
     public void act(){
         if(Greenfoot.isKeyDown("space")){
-            MainWorld world = new MainWorld();
+            Scene1 world = new Scene1();
             Greenfoot.setWorld(world);
         }
     }
