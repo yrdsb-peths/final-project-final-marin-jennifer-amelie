@@ -11,9 +11,6 @@ public class Ending extends MainWorld
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        MrBigRender mr = new MrBigRender();
-        addObject(mr, 420, 325);
-        
         Bird bird = new Bird();
         addObject(bird, 525, 440);
         
@@ -22,9 +19,5 @@ public class Ending extends MainWorld
         
         Log l = new Log("long");
         addObject(l, 320, 450);
-        
-        Label label = new Label("Do you have what I want?", 50);
-        addObject(label ,310, 49);
-        
     }
 }
