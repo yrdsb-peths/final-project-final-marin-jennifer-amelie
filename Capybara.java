@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Capybara here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Capybara extends Actor
 {
     public int vSpeed;
@@ -20,10 +14,15 @@ public class Capybara extends Actor
     GreenfootImage[] walkLeft = new GreenfootImage[5];
     GreenfootImage[] jumpRight = new GreenfootImage[5];
     GreenfootImage[] jumpLeft = new GreenfootImage[5];
+    GreenfootImage[] kingbara = new GreenfootImage[33];
     
     //direction of capybara
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    // number of coins being collected 
+    public int coinsNum = 0;
+
     
     /**
      * constructor - code gets run first time instance created
@@ -57,14 +56,20 @@ public class Capybara extends Actor
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpLeft[i].scale(50, 50);
         }
+        for(int i = 0; i<kingbara.length; i++){
+            kingbara[i] = new GreenfootImage("images/kingbara/frame_"+i+"_delay-0.12s.gif");
+            kingbara[i].scale(400, 400);
+        }
         animationTimer.mark();
         setImage(idleRight[0]);
         setImage(walkRight[0]);
         setImage(jumpRight[0]);
+        setImage(kingbara[0]);
     }
     int idleIndex = 0;
     int walkingIndex = 0;
     int jumpIndex = 0;
+    int kingbaraIndex = 0;
     
     // animate capybara
     public void idleCapybara(){
@@ -96,6 +101,16 @@ public class Capybara extends Actor
         }
         
     }
+    // narration
+    public void kingbara () {
+        if(animationTimer.millisElapsed() < 100){
+            return;
+        }
+        animationTimer.mark();
+        setImage(kingbara[kingbaraIndex]);
+        kingbaraIndex = (kingbaraIndex + 1) % kingbara.length;
+    }
+    
     // jumping
     public void jumpCapybara(){
         if(animationTimer.millisElapsed() < 100){
@@ -149,6 +164,11 @@ public class Capybara extends Actor
             
             //collect coins 
             collectCoins();
+            
+            //going to the ending
+            goToEnd();
+            
+            endPart();
         }
         idleCapybara();
     }
@@ -195,11 +215,27 @@ public class Capybara extends Actor
         jumping = false;
     }
     
-    //when touches, remove the coin
+    //when touches, remove the coin, add the number of coins being collected 
     public void collectCoins(){
+        int coins = 0;
         if(isTouching(Coin.class)){
             removeTouching(Coin.class);
+            coins++; 
         }
     }
     
+    public void goToEnd(){
+        if(isTouching(Portal.class)){
+            Ending end = new Ending();
+            Greenfoot.setWorld(end);
+        }
+    }
+    
+    public void endPart(){
+        if(isTouching(MrBigRender.class)){
+            if(coinsNum == 1){
+                removeTouching(MrBigRender.class);
+            }
+        }
+    }
 }
