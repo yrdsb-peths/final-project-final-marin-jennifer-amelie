@@ -5,7 +5,7 @@ public class MainWorld extends World
     private boolean gameOver = false;
     private Kingbara kingbara;
     private Birdie birdie;
-    
+
     Label label1 = new Label("A long time ago, in Solcieleux, a kingdom", 30);
     Label label2 = new Label("characterized by its striking beauty of the sky", 30);
     Label label3 = new Label("and nature, was ruled by two inseparable friends: ", 30);
