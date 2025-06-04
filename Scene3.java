@@ -10,7 +10,6 @@ public class Scene3 extends MainWorld
 {
     private Rainybara rainybara;
     private Birdie birdie;
-    private MrBigRender render;
     
     private Boolean timeYet = false;
     
