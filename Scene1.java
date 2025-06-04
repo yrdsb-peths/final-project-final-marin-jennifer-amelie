@@ -20,8 +20,6 @@ public class Scene1 extends MainWorld
     
     SimpleTimer animationTimer = new SimpleTimer();
     
-    GreenfootSound bg;
-    
     public Scene1()
     {
         super(680, 520, 1);

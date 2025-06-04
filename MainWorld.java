@@ -6,7 +6,7 @@ public class MainWorld extends World
     
     //changable for timer here
     int timer = 3050;
-
+    GreenfootSound bg;
     public MainWorld()
     {
         super(680, 520, 1);
