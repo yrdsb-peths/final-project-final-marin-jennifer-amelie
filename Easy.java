@@ -85,10 +85,6 @@ public class Easy extends MainWorld {
         Bird bird = new Bird();
         addObject(bird, 585, 130);
         
-        //add the badGuy
-        BadGuy b = new BadGuy();
-        //addObject(b, 600, 240);
-        
     }
 
     public void act(){
@@ -109,8 +105,6 @@ public class Easy extends MainWorld {
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
 
         }
-        
-        //Collecting Coins
         
     }
 }
