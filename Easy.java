@@ -4,7 +4,8 @@ public class Easy extends MainWorld {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3000;
+    int timer = 3050;
+    
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -33,39 +34,20 @@ public class Easy extends MainWorld {
         Log snd = new Log("med");
         addObject(snd, 450, 290);
         
-        Log ths = new Log("med");
-        addObject(ths, 150, 220);
+        Log ths = new Log("short");
+        addObject(ths, 200, 220);
         Log ths1 = new Log("stump");
         addObject(ths1, 50, 175);
         
-        Log last = new Log("short");
-        addObject(last, 570, 140);
         Log last1 = new Log("med");
-        addObject(last1, 375, 140);
+        addObject(last1, 375, 120);
         Log last2 = new Log("short");
-        addObject(last2, 100, 125);
+        addObject(last2, 150, 125);
         
         //portal
         Portal portal = new Portal();
-        addObject(portal, 100, 90);
+        addObject(portal, 450, 80);
         
-        // toxin
-        
-        Toxin toxin1 = new Toxin(100, 15);
-        addObject(toxin1, 575, 575);
-        
-        Toxin toxin3 = new Toxin(90, 15);
-        addObject(toxin3, 310, 320);
-        
-        Toxin toxin4 = new Toxin(100, 15);
-        addObject(toxin4, 500, 320);
-        
-        addObject(last, 200, 95);
-        Log last10 = new Log("long");
-
-        addObject(last1, 600, 95);
-
-        addObject(last1, 650, 95);
         setBackground("images/gameBG.png");
         
         //portal
@@ -77,22 +59,26 @@ public class Easy extends MainWorld {
 
         //add coins
         Coin coin = new Coin();
-        addObject(coin, 358, 450);
+        addObject(coin, 330, 440);
 
         Coin coin1 = new Coin();
-        addObject(coin1, 500, 450);
+        addObject(coin1, 490, 440);
         
         Coin coin2 = new Coin();
-        addObject(coin2, 410, 230);
+        addObject(coin2, 410, 220);
         
         Coin coin3 = new Coin();
-        addObject(coin3, 28, 100);
+        addObject(coin3, 50, 60);
         
         Coin coin4 = new Coin();
-        addObject(coin4, 200, 50);
+        addObject(coin4, 300, 60);
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
+        
+        //add the bird
+        Bird bird = new Bird();
+        addObject(bird, 585, 130);
         
     }
 
@@ -103,14 +89,17 @@ public class Easy extends MainWorld {
         
         //add number on timer
         timer--;
-        showText(""+timer, 342, 20);
+        showText(""+timer / 100, 342, 20);
 
         if (timer <= 0){
-            Greenfoot.stop();
+            setGameOver(true);
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
+            
+            addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
+
         }
         
-        //Collecting Coins
-        
-
     }
 }

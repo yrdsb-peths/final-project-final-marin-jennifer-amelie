@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Capybara here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Capybara extends Actor
 {
     public int vSpeed;
@@ -24,6 +18,10 @@ public class Capybara extends Actor
     //direction of capybara
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    // number of coins being collected 
+    public int coinsNum = 0;
+
     
     /**
      * constructor - code gets run first time instance created
@@ -96,6 +94,7 @@ public class Capybara extends Actor
         }
         
     }
+    
     // jumping
     public void jumpCapybara(){
         if(animationTimer.millisElapsed() < 100){
@@ -145,11 +144,18 @@ public class Capybara extends Actor
             }
             jumpCapybara();
             jump();
+        }
             // add a jumping sound
             
-            //collect coins 
-            collectCoins();
+        //collect coins 
+        if(isTouching(Coin.class)){
+            removeTouching(Coin.class);
+            coinsNum++;
         }
+            
+        //going to the ending
+        goToEnd();
+            
         idleCapybara();
     }
     
@@ -195,11 +201,16 @@ public class Capybara extends Actor
         jumping = false;
     }
     
-    //when touches, remove the coin
-    public void collectCoins(){
-        if(isTouching(Coin.class)){
-            removeTouching(Coin.class);
+    public void goToEnd(){
+        if(isTouching(Portal.class)){
+            if(coinsNum == 6){
+                Ending end = new Ending();
+                Greenfoot.setWorld(end);
+            }
+            else{
+                Ending2 end2 = new Ending2();
+                Greenfoot.setWorld(end2);
+            }
         }
     }
-    
 }
