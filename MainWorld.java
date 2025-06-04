@@ -10,8 +10,6 @@ public class MainWorld extends World
     public MainWorld()
     {
         super(680, 520, 1);
-
-
     }
     
     public MainWorld(int width, int height, int cellSize)
