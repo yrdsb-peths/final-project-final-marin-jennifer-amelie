@@ -8,14 +8,54 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scene2 extends MainWorld
 {
-
-    Label label1 = new Label("One day, when Capybara and Birdie are walking in their garden", 30);
+    private Chillingbara chillingbara;
+    private Birdie birdie;
+    private Boolean timeYet = false;
+    
+    Label label1 = new Label("One day, when Capybara and Birdie are hanging", 30);
+    Label label2 = new Label("out in the royal garden,", 30);
+    Label label3 = new Label("a streak of lightning suddenly flashes by...", 30);
+    Label label4 = new Label("Continue \u2192", 30);
+    
+    SimpleTimer animationTimer = new SimpleTimer();
     
     public Scene2()
     {
         super(680, 520, 1);
-        GreenfootImage kingdomBg = new GreenfootImage("images/garden.png");
-        kingdomBg.scale(680, 520); 
-        getBackground().drawImage(kingdomBg, 0, 0);
+        GreenfootImage gardenBg = new GreenfootImage("images/garden.png");
+        gardenBg.scale(680, 520); 
+        getBackground().drawImage(gardenBg, 0, 0);
+        
+        chillingbara = new Chillingbara();
+        addObject(chillingbara, 400, 300); 
+        
+        birdie = new Birdie();
+        addObject(birdie, 260, 280);
+    }
+    
+    public void act() {
+        chillingbara.chillingbara();
+        birdie.birdie();
+        
+        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+            addObject(label1, 330, 40);
+        }
+        if (animationTimer.millisElapsed() > 2000) {  // after 2 seconds
+            addObject(label2, 170, 80);
+        }
+        if (animationTimer.millisElapsed() > 4000) {  
+            addObject(label3, 290, 120);
+        }
+        if (animationTimer.millisElapsed() > 6000) {  
+            addObject(label4, 550, 500);
+            timeYet = true;
+        }
+        
+        if (timeYet) {
+            if(Greenfoot.isKeyDown("right")){
+            Scene3 world = new Scene3();
+            Greenfoot.setWorld(world);
+            }
+        }
     }
 }
