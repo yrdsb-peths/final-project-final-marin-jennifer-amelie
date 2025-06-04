@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Scene3 extends MainWorld
+public class Scene4 extends MainWorld
 {
     private Rainybara rainybara;
     private Birdie birdie;
@@ -21,7 +21,7 @@ public class Scene3 extends MainWorld
     
     SimpleTimer animationTimer = new SimpleTimer();
     
-    public Scene3()
+    public Scene4()
     {
         super(680, 520, 1);
         GreenfootImage gardenBg = new GreenfootImage("images/garden2.png");
