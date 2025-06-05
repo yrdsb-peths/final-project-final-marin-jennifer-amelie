@@ -23,6 +23,7 @@ public class RestartButton extends Button {
             } else if (current instanceof Hard) {
                 Greenfoot.setWorld(new Hard());
             }
+            Log.setYes(false);
         }
     }
 }

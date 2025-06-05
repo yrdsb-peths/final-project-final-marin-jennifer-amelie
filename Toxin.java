@@ -10,7 +10,6 @@ public class Toxin extends Actor
 {
     GreenfootImage[] toxin = new GreenfootImage[48];
     SimpleTimer animationTimer = new SimpleTimer();
-    
     public Toxin(int width, int height) {
         for(int i = 0; i<toxin.length; i++){
            toxin[i] = new GreenfootImage("images/toxinAnimation2/frame_"+(i)+"_delay-0.01s.gif");
@@ -42,7 +41,6 @@ public class Toxin extends Actor
             
             getWorld().addObject(new RestartButton(), getWorld().getWidth() / 2 - 100, getWorld().getHeight() / 2 + 80);
             getWorld().addObject(new MenuButton(), getWorld().getWidth() / 2 + 100, getWorld().getHeight() / 2 + 80);
-
         }
     }
 }
