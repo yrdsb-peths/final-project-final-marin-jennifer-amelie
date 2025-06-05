@@ -53,9 +53,9 @@ public class Easy extends MainWorld {
         
         //toxin
         Toxin to = new Toxin(90, 15);
-        addObject(to, 330, 550);
+        addObject(to, 330, 510);
         Toxin to1 = new Toxin(60, 15);
-        addObject(to1, 495, 550);
+        addObject(to1, 495, 510);
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
