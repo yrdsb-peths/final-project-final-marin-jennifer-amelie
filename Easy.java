@@ -11,7 +11,7 @@ public class Easy extends MainWorld {
         setBackground("images/gameBG.png");
         bg = new GreenfootSound("jungle.mp3");
         Capybara capybara = new Capybara();
-        addObject(capybara, 60, 550);
+        addObject(capybara, 60, 480);
         //switches
         Switch one = new Switch();
         addObject(one, 570, 115);
