@@ -119,7 +119,8 @@ public class Capybara extends Actor
     public void act()
     {
         MainWorld world = (MainWorld) getWorld();
-
+        GreenfootSound hop = new GreenfootSound("jump.mp3");
+        hop.setVolume(50);
         if (world.isGameOver()) {
             return;
         }
@@ -144,8 +145,8 @@ public class Capybara extends Actor
             }
             jumpCapybara();
             jump();
+            hop.play();
         }
-            // add a jumping sound
             
         //collect coins 
         if(isTouching(Coin.class)){
