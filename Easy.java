@@ -89,7 +89,10 @@ public class Easy extends MainWorld {
     }
 
     public void act(){
+        bg.setVolume(50);
+        bg.play();
         if (gameOver) {
+            bg.stop();
             return;
         }
         
@@ -99,7 +102,7 @@ public class Easy extends MainWorld {
 
         if (timer <= 0){
             setGameOver(true);
-            
+            bg.stop();
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
             

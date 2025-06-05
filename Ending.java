@@ -19,6 +19,7 @@ public class Ending extends MainWorld
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
+        bg = new GreenfootSound("yay.mp3");
         
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 
@@ -30,7 +31,8 @@ public class Ending extends MainWorld
     public void act() {
         kingbara.kingbara();
         birdie.birdie();
-        
+        bg.setVolume(50);
+        bg.play();
         if (animationTimer.millisElapsed() < 3000) { 
             birdie.move(1);
         }
