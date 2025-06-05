@@ -1,17 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Scene1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Ending2 extends MainWorld
 {
     private Kingbara kingbara;
 
-    Label label1 = new Label("Birdie", 30);
-    Label label2 = new Label("Where are you?", 30);
+    Label label1 = new Label("Because you didn't collect enough of coins", 30);
+    Label label2 = new Label("Birdie disappeared... forever...", 30);
     Label label3 = new Label("Birdie!! ", 30);
     Label label4 = new Label("Birdie...", 30);
     Label label5 = new Label("The end", 30);
@@ -34,20 +28,20 @@ public class Ending2 extends MainWorld
     public void act() {
         kingbara.kingbara();
         
-        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+        if (animationTimer.millisElapsed() > 1000) {
             addObject(label1, 300, 40);
         }
-        if (animationTimer.millisElapsed() > 2000) {  // after 2 seconds
-            addObject(label2, 335, 80);
-        }
-        if (animationTimer.millisElapsed() > 4000) {  
-            addObject(label3, 358, 120);
+        if (animationTimer.millisElapsed() > 4000) {
+            addObject(label2, 370, 100);
         }
         if (animationTimer.millisElapsed() > 6000) {  
-            addObject(label4, 358, 160);
+            addObject(label3, 430, 160);
         }
         if (animationTimer.millisElapsed() > 8000) {  
-            addObject(label5, 550, 500);
+            addObject(label4, 450, 220);
+        }
+        if (animationTimer.millisElapsed() > 10000) {  
+            addObject(label5, 620, 500);
         }
     }
 }
