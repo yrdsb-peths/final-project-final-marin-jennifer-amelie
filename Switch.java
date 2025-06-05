@@ -19,6 +19,11 @@ public class Switch extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        GreenfootImage Lswitch = new GreenfootImage("images/switch/Lswitch.png");
+        Lswitch.scale(60,60);
+        if(isTouching(Capybara.class)&&Greenfoot.isKeyDown("E")){
+            setImage(Lswitch);
+            Log.setYes(true);
+        }
     }
 }

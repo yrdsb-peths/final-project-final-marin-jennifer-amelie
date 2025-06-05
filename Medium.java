@@ -19,6 +19,11 @@ public class Medium extends MainWorld
         
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 485);
+        
+        //switch
+        Switch s = new Switch();
+        addObject(s, 570, 110);
+        
         //adding platforms
         Log floor = new Log("med");
         addObject(floor, 10, 575);
@@ -47,8 +52,6 @@ public class Medium extends MainWorld
         
         Log last = new Log("short");
         addObject(last, 570, 140);
-        Log last1 = new Log("med");
-        addObject(last1, 375, 140);
         Log last2 = new Log("short");
         addObject(last2, 100, 125);
         
@@ -65,5 +68,12 @@ public class Medium extends MainWorld
         
         Toxin toxin3 = new Toxin(270, 10);
         addObject(toxin3, 400, 290);
+    }
+    
+    public void act(){
+        if(Log.getYes()){
+            Log last1 = new Log("med");
+            addObject(last1, 375, 140);
+        }
     }
 }

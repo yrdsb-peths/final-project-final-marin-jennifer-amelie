@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Log extends Actor
 {
     String size;
+    public static boolean yes = false;
     public Log(String type){
         if(type.equals("long")){
             GreenfootImage log = new GreenfootImage("treetrunks/long.png");
@@ -31,7 +32,12 @@ public class Log extends Actor
             setImage(log); 
         }
     }
-    
+    public static boolean getYes(){
+        return yes;
+    }
+    public static void setYes(boolean why){
+        yes = why;
+    }
     /**
      * Act - do whatever the Log wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

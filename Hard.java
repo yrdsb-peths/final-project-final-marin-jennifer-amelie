@@ -14,6 +14,8 @@ public class Hard extends MainWorld
         setBackground("levels/hard.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 150, 100);
+        Switch s = new Switch();
+        addObject(s, 350, 550);
         //adding platforms
         Log floor = new Log("short");
         addObject(floor, 100, 580);
@@ -41,8 +43,6 @@ public class Hard extends MainWorld
         
         Log last = new Log("med");
         addObject(last, 0, 350);
-        Log temp = new Log("short");
-        addObject(temp, 250, 275);
         
         //portal
         Portal portal = new Portal();
@@ -57,5 +57,11 @@ public class Hard extends MainWorld
         
         Toxin toxin3 = new Toxin(120, 15);
         addObject(toxin3, 450, 580);
+    }
+    public void act(){
+        if(Log.getYes()){
+            Log temp = new Log("short");
+            addObject(temp, 250, 275);
+        }
     }
 }
