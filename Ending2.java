@@ -16,6 +16,7 @@ public class Ending2 extends MainWorld
     public Ending2()
     {
         super(680, 520, 1);
+        bg = new GreenfootSound("doom.mp3");
         GreenfootImage mist = new GreenfootImage("images/mist.jpg");
         mist.scale(680, 520); 
         getBackground().drawImage(mist, 0, 0);
@@ -27,7 +28,8 @@ public class Ending2 extends MainWorld
     
     public void act() {
         kingbara.kingbara();
-        
+        bg.setVolume(50);
+        bg.play();
         if (animationTimer.millisElapsed() > 1000) {
             addObject(label1, 300, 40);
         }

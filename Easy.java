@@ -9,6 +9,7 @@ public class Easy extends MainWorld {
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
+        bg = new GreenfootSound("jungle.mp3");
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 550);
         //switches
@@ -83,7 +84,10 @@ public class Easy extends MainWorld {
     }
 
     public void act(){
+        bg.setVolume(50);
+        bg.play();
         if (gameOver) {
+            bg.stop();
             return;
         }
         
@@ -93,12 +97,12 @@ public class Easy extends MainWorld {
 
         if (timer <= 0){
             setGameOver(true);
+            bg.stop();
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
             
             addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
-
         }
         
     }

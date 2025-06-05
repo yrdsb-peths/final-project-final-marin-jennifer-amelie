@@ -23,6 +23,8 @@ public class Scene1 extends MainWorld
     public Scene1()
     {
         super(680, 520, 1);
+        bg = new GreenfootSound("jungle.mp3");
+        bg.setVolume(50);
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
@@ -37,7 +39,7 @@ public class Scene1 extends MainWorld
     public void act() {
         kingbara.kingbara();
         birdie.birdie();
-        
+        bg.play();
         if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
             addObject(label1, 300, 40);
         }
@@ -59,6 +61,7 @@ public class Scene1 extends MainWorld
             if(Greenfoot.isKeyDown("right")){
             Scene2 world = new Scene2();
             Greenfoot.setWorld(world);
+            bg.stop();
             }
         }
     }
