@@ -51,9 +51,11 @@ public class Easy extends MainWorld {
         
         setBackground("images/gameBG.png");
         
-        //portal
-        Portal portal1 = new Portal();
-        addObject(portal, 650, 50);
+        //toxin
+        Toxin to = new Toxin(90, 15);
+        addObject(to, 330, 550);
+        Toxin to1 = new Toxin(60, 15);
+        addObject(to1, 495, 550);
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
