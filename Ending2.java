@@ -23,13 +23,12 @@ public class Ending2 extends MainWorld
         
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 
-        
+        bg.setVolume(75);
+        bg.play();
     }
     
     public void act() {
         kingbara.kingbara();
-        bg.setVolume(50);
-        bg.play();
         if (animationTimer.millisElapsed() > 1000) {
             addObject(label1, 300, 40);
         }
