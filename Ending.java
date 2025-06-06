@@ -19,7 +19,7 @@ public class Ending extends MainWorld
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
-        bg = new GreenfootSound("yay.mp3");
+        bg = new GreenfootSound("bird.mp3");
         
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 
