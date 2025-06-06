@@ -12,7 +12,7 @@ public class Ending extends MainWorld
     Label label5 = new Label("The end :)", 30);
     
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    GreenfootSound bg;
     public Ending()
     {
         super(680, 520, 1);

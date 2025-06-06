@@ -5,7 +5,7 @@ public class Easy extends MainWorld {
     
     //changable for timer here
     int timer = 3050;
-    
+    GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
