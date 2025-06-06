@@ -4,8 +4,8 @@ public class Easy extends MainWorld {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3050;
-    
+    int timer = 3170;
+    GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -86,7 +86,7 @@ public class Easy extends MainWorld {
     }
 
     public void act(){
-        bg.setVolume(50);
+        bg.setVolume(40);
         bg.play();
         if (gameOver) {
             bg.stop();
@@ -95,7 +95,7 @@ public class Easy extends MainWorld {
         
         //add number on timer
         timer--;
-        showText(""+timer / 100, 342, 20);
+        showText(""+timer / 105, 342, 20);
 
         if (timer <= 0){
             setGameOver(true);

@@ -12,14 +12,14 @@ public class Ending extends MainWorld
     Label label5 = new Label("The end :)", 30);
     
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    GreenfootSound bg;
     public Ending()
     {
         super(680, 520, 1);
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
-        bg = new GreenfootSound("yay.mp3");
+        bg = new GreenfootSound("bird.mp3");
         
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 

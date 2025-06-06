@@ -9,7 +9,7 @@ public class Ending2 extends MainWorld
     Label label3 = new Label("Birdie!! ", 30);
     Label label4 = new Label("Birdie...", 30);
     Label label5 = new Label("The end", 30);
-    
+    GreenfootSound bg;
     
     SimpleTimer animationTimer = new SimpleTimer();
     
