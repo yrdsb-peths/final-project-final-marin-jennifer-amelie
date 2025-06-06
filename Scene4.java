@@ -22,22 +22,21 @@ public class Scene4 extends MainWorld
     Label label7 = new Label("Continue \u2192", 30);
     
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    GreenfootSound w;
     public Scene4()
     {
         super(680, 520, 1);
         GreenfootImage gardenBg = new GreenfootImage("images/garden2.png");
         gardenBg.scale(680, 520); 
         getBackground().drawImage(gardenBg, 0, 0);
-        
+        w = new GreenfootSound("whisper.mp3");
         scaredbara = new Scaredbara();
         addObject(scaredbara, 400, 350); 
-        
+        w.play();
     }
     
     public void act() {
         scaredbara.scaredbara();
-        
         if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
             addObject(label1, 330, 40);
         }
