@@ -86,7 +86,7 @@ public class Easy extends MainWorld {
     }
 
     public void act(){
-        bg.setVolume(50);
+        bg.setVolume(40);
         bg.play();
         if (gameOver) {
             bg.stop();

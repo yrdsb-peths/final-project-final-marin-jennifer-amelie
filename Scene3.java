@@ -19,21 +19,21 @@ public class Scene3 extends MainWorld
     Label label4 = new Label("Continue \u2192", 30);
     
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    GreenfootSound th;
     public Scene3()
     {
         super(680, 520, 1);
         GreenfootImage gardenBg = new GreenfootImage("images/garden2.png");
         gardenBg.scale(680, 520); 
         getBackground().drawImage(gardenBg, 0, 0);
-        
+        th = new GreenfootSound("thunder.mp3");
         rainybara = new Rainybara();
-        addObject(rainybara, 400, 250); 
+        addObject(rainybara, 400, 250);
+        th.play();
     }
     
     public void act() {
         rainybara.rainybara();
-        
         if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
             addObject(label1, 330, 40);
         }

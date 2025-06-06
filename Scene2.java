@@ -19,12 +19,12 @@ public class Scene2 extends MainWorld
     
     SimpleTimer animationTimer = new SimpleTimer();
     
-    GreenfootSound th;
+    
     public Scene2()
     {
         super(680, 520, 1);
         bg = new GreenfootSound("campfire.mp3");
-        th = new GreenfootSound("thunder.mp3");
+        
         bg.setVolume(50);
         GreenfootImage gardenBg = new GreenfootImage("images/garden.png");
         gardenBg.scale(680, 520); 
@@ -49,7 +49,6 @@ public class Scene2 extends MainWorld
         }
         if (animationTimer.millisElapsed() > 4000) {  
             addObject(label3, 290, 120);
-            th.play();
         }
         if (animationTimer.millisElapsed() > 6000) {  
             addObject(label4, 550, 500);
