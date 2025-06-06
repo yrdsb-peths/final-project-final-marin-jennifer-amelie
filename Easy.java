@@ -3,7 +3,7 @@ import greenfoot.*;
 public class Easy extends MainWorld {
     
     //changable for timer here
-    int timer = 1000; //3170
+    int timer = 1550; //3170
     GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
