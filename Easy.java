@@ -1,7 +1,6 @@
 import greenfoot.*;
 
 public class Easy extends MainWorld {
-    private boolean gameOver = false;
     
     //changable for timer here
     int timer = 1000; //3170
@@ -91,6 +90,9 @@ public class Easy extends MainWorld {
         
         //add number on timer
         if(timer / 105 > 0){
+            if(gameOver) {
+                return;
+            }
             timer --;
         }
         showText(""+timer / 105, 342, 20);

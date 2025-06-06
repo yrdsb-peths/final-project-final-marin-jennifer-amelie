@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MainWorld extends World
 {
-    private boolean gameOver = false;
+    public boolean gameOver = false;
 
     public MainWorld()
     {
