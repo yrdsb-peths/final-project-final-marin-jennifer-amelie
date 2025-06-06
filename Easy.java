@@ -4,7 +4,7 @@ public class Easy extends MainWorld {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3170;
+    int timer = 1000; //3170
     GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
@@ -88,17 +88,16 @@ public class Easy extends MainWorld {
     public void act(){
         bg.setVolume(50);
         bg.play();
-        if (gameOver) {
-            bg.stop();
-            return;
-        }
         
         //add number on timer
-        timer--;
+        if(timer / 105 > 0){
+            timer --;
+        }
         showText(""+timer / 105, 342, 20);
 
-        if (timer <= 0){
+        if (timer / 105 <= 0.99){
             setGameOver(true);
+            gameOver = true;
             bg.stop();
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
