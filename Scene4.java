@@ -64,7 +64,7 @@ public class Scene4 extends MainWorld
         
         if (timeYet) {
             if(Greenfoot.isKeyDown("right")){
-            Scene4 world = new Scene4();
+            Scene5 world = new Scene5();
             Greenfoot.setWorld(world);
             }
         }
