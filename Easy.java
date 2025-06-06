@@ -4,30 +4,26 @@ public class Easy extends MainWorld {
     private boolean gameOver = false;
     
     //changable for timer here
-    int timer = 3050;
-    
+    int timer = 3170;
+    GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
         setBackground("images/gameBG.png");
+        bg = new GreenfootSound("jungle.mp3");
         Capybara capybara = new Capybara();
-        addObject(capybara, 60, 475);
-
-        Toxin toxin = new Toxin(70, 10);
-        addObject(toxin, 487, 510);
-        
-        Toxin toxin2 = new Toxin(70, 10);
-        addObject(toxin2, 325, 510);
-        
-
+        addObject(capybara, 60, 480);
+        //switches
+        Switch one = new Switch();
+        addObject(one, 570, 115);
         //adding platforms
         Log floor1 = new Log("med");
         addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
-        addObject(floor2, 405, 515);
+        addObject(floor2, 420, 515);
         Log floor3 = new Log("short");
         addObject(floor3, 570, 515);
         Log floor4 = new Log("stump");
-        addObject(floor4, 650, 500);
+        addObject(floor4, 640, 500);
         
         Log first = new Log("short");
         addObject(first, 550, 400);
@@ -37,35 +33,29 @@ public class Easy extends MainWorld {
         addObject(first2, 150, 370);
         
         Log snd = new Log("med");
-        addObject(snd, 500, 290);
+        addObject(snd, 450, 290);
         
-        Log ths = new Log("med");
-        addObject(ths, 230, 200);
+        Log ths = new Log("short");
+        addObject(ths, 200, 220);
         Log ths1 = new Log("stump");
         addObject(ths1, 50, 175);
         
-        Log last = new Log("short");
-        addObject(last, 570, 140);
         Log last1 = new Log("med");
-        addObject(last1, 375, 100);
+        addObject(last1, 375, 120);
         Log last2 = new Log("short");
-        addObject(last2, 175, 100);
+        addObject(last2, 150, 125);
         
         //portal
         Portal portal = new Portal();
-        addObject(portal, 500, 60);
+        addObject(portal, 450, 80);
         
-        addObject(last, 200, 95);
-        Log last10 = new Log("long");
-
-        addObject(last1, 600, 95);
-
-        addObject(last1, 650, 95);
         setBackground("images/gameBG.png");
         
-        //portal
-        Portal portal1 = new Portal();
-        addObject(portal, 650, 50);
+        //toxin
+        Toxin to = new Toxin(90, 15);
+        addObject(to, 330, 510);
+        Toxin to1 = new Toxin(60, 15);
+        addObject(to1, 495, 510);
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
@@ -78,13 +68,13 @@ public class Easy extends MainWorld {
         addObject(coin1, 490, 440);
         
         Coin coin2 = new Coin();
-        addObject(coin2, 410, 230);
+        addObject(coin2, 410, 220);
         
         Coin coin3 = new Coin();
-        addObject(coin3, 28, 100);
+        addObject(coin3, 50, 60);
         
         Coin coin4 = new Coin();
-        addObject(coin4, 300, 80);
+        addObject(coin4, 300, 60);
         
         Coin coin5 = new Coin();
         addObject(coin5, 50, 300);
@@ -93,26 +83,29 @@ public class Easy extends MainWorld {
         Bird bird = new Bird();
         addObject(bird, 585, 130);
         
-        //add the badGuy
-        BadGuy b = new BadGuy();
-        //addObject(b, 600, 240);
-        
     }
 
     public void act(){
+        bg.setVolume(40);
+        bg.play();
         if (gameOver) {
+            bg.stop();
             return;
         }
         
         //add number on timer
         timer--;
-        showText(""+timer / 100, 342, 20);
+        showText(""+timer / 105, 342, 20);
 
         if (timer <= 0){
-            Greenfoot.stop();
+            setGameOver(true);
+            bg.stop();
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
+            
+            addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
-        
-        //Collecting Coins
         
     }
 }

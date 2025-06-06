@@ -14,7 +14,6 @@ public class Capybara extends Actor
     GreenfootImage[] walkLeft = new GreenfootImage[5];
     GreenfootImage[] jumpRight = new GreenfootImage[5];
     GreenfootImage[] jumpLeft = new GreenfootImage[5];
-    GreenfootImage[] kingbara = new GreenfootImage[33];
     
     //direction of capybara
     String facing = "right";
@@ -56,20 +55,14 @@ public class Capybara extends Actor
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpLeft[i].scale(50, 50);
         }
-        for(int i = 0; i<kingbara.length; i++){
-            kingbara[i] = new GreenfootImage("images/kingbara/frame_"+i+"_delay-0.12s.gif");
-            kingbara[i].scale(400, 400);
-        }
         animationTimer.mark();
         setImage(idleRight[0]);
         setImage(walkRight[0]);
         setImage(jumpRight[0]);
-        setImage(kingbara[0]);
     }
     int idleIndex = 0;
     int walkingIndex = 0;
     int jumpIndex = 0;
-    int kingbaraIndex = 0;
     
     // animate capybara
     public void idleCapybara(){
@@ -101,15 +94,6 @@ public class Capybara extends Actor
         }
         
     }
-    // narration
-    public void kingbara () {
-        if(animationTimer.millisElapsed() < 100){
-            return;
-        }
-        animationTimer.mark();
-        setImage(kingbara[kingbaraIndex]);
-        kingbaraIndex = (kingbaraIndex + 1) % kingbara.length;
-    }
     
     // jumping
     public void jumpCapybara(){
@@ -135,7 +119,8 @@ public class Capybara extends Actor
     public void act()
     {
         MainWorld world = (MainWorld) getWorld();
-
+        GreenfootSound hop = new GreenfootSound("jump.mp3");
+        hop.setVolume(50);
         if (world.isGameOver()) {
             return;
         }
@@ -160,16 +145,18 @@ public class Capybara extends Actor
             }
             jumpCapybara();
             jump();
-            // add a jumping sound
-            
-            //collect coins 
-            collectCoins();
-            
-            //going to the ending
-            goToEnd();
-            
-            endPart();
+            hop.play();
         }
+            
+        //collect coins 
+        if(isTouching(Coin.class)){
+            removeTouching(Coin.class);
+            coinsNum++;
+        }
+            
+        //going to the ending
+        goToEnd();
+            
         idleCapybara();
     }
     
@@ -215,26 +202,15 @@ public class Capybara extends Actor
         jumping = false;
     }
     
-    //when touches, remove the coin, add the number of coins being collected 
-    public void collectCoins(){
-        int coins = 0;
-        if(isTouching(Coin.class)){
-            removeTouching(Coin.class);
-            coins++; 
-        }
-    }
-    
     public void goToEnd(){
         if(isTouching(Portal.class)){
-            Ending end = new Ending();
-            Greenfoot.setWorld(end);
-        }
-    }
-    
-    public void endPart(){
-        if(isTouching(MrBigRender.class)){
-            if(coinsNum == 1){
-                removeTouching(MrBigRender.class);
+            if(coinsNum == 6){
+                Ending end = new Ending();
+                Greenfoot.setWorld(end);
+            }
+            else{
+                Ending2 end2 = new Ending2();
+                Greenfoot.setWorld(end2);
             }
         }
     }
