@@ -64,9 +64,11 @@ public class Hard extends MainWorld
         addObject(coin3, 550, 125);
         Coin coin4 = new Coin();
         addObject(coin4, 230, 300);
+        Coin coin5 = new Coin();
+        addObject(coin5, 300, 400);
         //add timer 
         Timer t = new Timer();
-        addObject(t, 342, 20);
+        addObject(t, 400, 20);
         // toxin
         Toxin toxin = new Toxin(85, 10);
         addObject(toxin, 262, 155);
@@ -91,7 +93,7 @@ public class Hard extends MainWorld
         
         //add number on timer
         timer--;
-        showText(""+timer / 105, 342, 20);
+        showText(""+timer / 105, 400, 20);
 
         if (timer <= 0){
             setGameOver(true);

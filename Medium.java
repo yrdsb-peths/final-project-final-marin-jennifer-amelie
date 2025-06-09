@@ -24,13 +24,13 @@ public class Medium extends MainWorld
         
         //adding platforms
         Log floor = new Log("med");
-        addObject(floor, 10, 575);
+        addObject(floor, 30, 575);
         Log floor1 = new Log("med");
         addObject(floor1, 380, 575);
         Log floor2 = new Log("short");
         addObject(floor2, 670, 575);
         Log floor3 = new Log("stump");
-        addObject(floor3, 760, 540);
+        addObject(floor3, 750, 540);
         
         Log fs = new Log("med");
         addObject(fs, 420, 425);
@@ -58,11 +58,11 @@ public class Medium extends MainWorld
         addObject(portal, 100, 90);
         
         // toxin
-        Toxin toxin = new Toxin(90, 15);
-        addObject(toxin, 190, 575);
+        Toxin toxin = new Toxin(70, 15);
+        addObject(toxin, 200, 575);
         
-        Toxin toxin2 = new Toxin(110, 15);
-        addObject(toxin2, 575, 575);
+        Toxin toxin2 = new Toxin(100, 15);
+        addObject(toxin2, 570, 575);
         
         Toxin toxin3 = new Toxin(270, 10);
         addObject(toxin3, 400, 290);
