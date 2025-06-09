@@ -1,20 +1,13 @@
-# Set up Greenfoot for VSCode
+# SET  UP
+1. Copy the this file and rename it to `project.greenfoot`
 
-[Mac]
-1. Open `Finder` and navigate to the Applications folder.
-2. Right-click on the Greenfoot app and select `Show Package Contents`.
-3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
-4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
+# TO PLAY
+Instructions are in the introduction but in case you need a reminder:
+1. The green toxins are deadly. Jump \u2191 to avoid touching it.
+2. Every few seconds, the Ancient Tree will collapse and reset. You must escape within the time limit.
+3. All of the logs are safe to stand on.
+4. Jump to collect the coins.
+5. Press <e> to activate all switches.
+6. Use stumps to teleport you up.
 
-[Windows]
-1. Open `File Explorer` and navigate to `C:\Program Files\Greenfoot` and locate the `greenfoot.jar` file.
-2. Copy this `greenfoot.jar` to the `\lib` Folder in this project.
-
-<br>
-<br>
-
-# project.greenfoot
-Copy the `project.greenfoot.md` file and rename it to `project.greenfoot`
-
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+Good luck on your journey!
