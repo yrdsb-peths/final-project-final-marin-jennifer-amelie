@@ -2,9 +2,15 @@ import greenfoot.*;
 
 public class Easy extends MainWorld {
     
+    /**
+     * This class is extended from its parent class, MainWorld.
+     * This class is the easy mode of 
+     */
+    
     //changable for timer here
     int timer = 1550; //3170
     
+    // label to display the coins
     private Label coinLabel;
 
 

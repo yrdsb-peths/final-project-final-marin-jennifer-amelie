@@ -32,17 +32,25 @@ public class MainWorld extends World
     
     
     // allows the child classes to create worlds
+    /**
+     * @param width      The width of the world in cells.
+     * @param height     The height of the world in cells.
+     * @param cellSize   The size of each cell in pixels.
+     */
+    
     public MainWorld(int width, int height, int cellSize)
     {    
         super(width, height, cellSize);
     }
     
     // Sets the gameOver value
+    // @param        value True to mark the game as over; false otherwise.
     public void setGameOver(boolean value) {
         gameOver = value;
     }
     
     // tells the other methods whether if game is over
+    //@return        True if the game is over; false otherwise.
     public boolean isGameOver() {
         return gameOver;
     }
@@ -55,6 +63,7 @@ public class MainWorld extends World
     
     
     // updates the label for the coin score
+    // @param coins       The number of coins currently collected
     public void updateCoinLabel(int coins)
     {
         if (coinLabel != null) {
