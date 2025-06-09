@@ -72,7 +72,7 @@ public class Hard extends MainWorld
         Toxin toxin2 = new Toxin(160, 20);
         addObject(toxin2, 225, 590);
         
-        addObject(toxin3, 430, 580);
+
 
         Toxin toxin3 = new Toxin(80, 20);
         addObject(toxin3, 430, 590);
@@ -96,7 +96,6 @@ public class Hard extends MainWorld
         
         //add number on timer
         timer--;
-        showText(""+timer / 105, 342, 20);
 
         if (timer <= 0){
             setGameOver(true);
