@@ -35,8 +35,8 @@ public class Log extends Actor
     public static boolean getYes(){
         return yes;
     }
-    public static void setYes(boolean why){
-        yes = why;
+    public static void setYes(boolean on){
+        yes = on;
     }
     /**
      * Act - do whatever the Log wants to do. This method is called whenever
