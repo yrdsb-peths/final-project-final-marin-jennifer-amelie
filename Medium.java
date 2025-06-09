@@ -1,5 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * This class is extended from its parent class, MainWorld.
+ * This class is the medium mode of the game.
+ * 
+ * The medium mode contains obstacles such as toxin and the user has to jump
+ * between logs in order to reach the portal and save the bird.
+ */
+
 public class Medium extends MainWorld
 {
     // label to display the coins

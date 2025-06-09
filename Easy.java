@@ -1,14 +1,13 @@
 import greenfoot.*;
+/**
+ * This class is extended from its parent class, MainWorld.
+ * This class is the easy mode of the game.
+ * 
+ * The easy mode contains obstacles such as toxin and the user has to jump
+ * between logs in order to reach the portal and save the bird.
+ */
 
 public class Easy extends MainWorld {
-    
-    /**
-     * This class is extended from its parent class, MainWorld.
-     * This class is the easy mode of the game
-     * 
-     * The easy mode contains obstacles such as toxin and the user has to jump
-     * between logs in order to reach the portal and save the bird.
-     */
     
     //changable for timer here
     int timer = 1550; //1550

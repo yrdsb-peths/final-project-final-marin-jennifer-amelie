@@ -1,26 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * This class is extended from its parent class, MainWorld.
+ * This class is the hard mode of the game.
+ * 
+ * The hard mode contains obstacles such as toxin and the user has to jump
+ * between logs in order to reach the portal and save the bird.
+ */
+
 public class Hard extends MainWorld
 {
+    // boolean for gameOver 
     private boolean gameOver = false;
     
     //changable for timer here
     int timer = 3170;
-    GreenfootSound bg;
+    GreenfootSound bg;// background sound
     /**
      * Constructor for objects of class Hard.
      * 
      */
     public Hard()
     {    
+        // sets the dimesnion
         super(700, 600, 1);
         
+        // background 
         setBackground("images/gameBG1.png");
         bg = new GreenfootSound("jungle.mp3");
+        
+        // adds capybara
         Capybara capybara = new Capybara();
         addObject(capybara, 150, 100);
+        
+        // switch
         Switch s = new Switch();
         addObject(s, 350, 550);
+        
         //adding platforms
         Log floor = new Log("short");
         addObject(floor, 100, 580);
@@ -64,9 +80,11 @@ public class Hard extends MainWorld
         addObject(coin3, 550, 125);
         Coin coin4 = new Coin();
         addObject(coin4, 230, 300);
+        
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
+        
         // toxin
         Toxin toxin = new Toxin(85, 10);
         addObject(toxin, 262, 155);
@@ -84,6 +102,8 @@ public class Hard extends MainWorld
         addObject(toxin5, 25, 590);
     }
     public void act(){
+        // gets a log
+        
         if(Log.getYes()){
             Log temp = new Log("short");
             addObject(temp, 225, 275);
@@ -92,14 +112,19 @@ public class Hard extends MainWorld
         //add number on timer
         timer--;
         showText(""+timer / 105, 342, 20);
-
+        
+        // if the timer stops
         if (timer <= 0){
-            setGameOver(true);
-            bg.stop();
+            setGameOver(true); // gameover
+            
+            // displays gameover
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
             
+            // displays reset button
             addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            
+            // displays menu button
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
     }
