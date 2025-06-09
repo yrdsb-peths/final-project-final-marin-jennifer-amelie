@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Ending extends MainWorld
 {
-    // adds the sprite, kingbara
+    // declares the sprite, kingbara
     private Kingbara kingbara;
     
-    // adds the sprite, birdie
+    // declares the sprite, birdie
     private Birdie birdie;
     
     // displays the lines of the story
@@ -31,29 +31,36 @@ public class Ending extends MainWorld
     // a constructor
     public Ending()
     {
+        // sets the dimension
         super(680, 520, 1);
-        GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
-        kingdomBg.scale(680, 520); 
-        getBackground().drawImage(kingdomBg, 0, 0);
-        bg = new GreenfootSound("bird.mp3");
         
+        // sets the background
+        GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
+        kingdomBg.scale(680, 520);  // adjusts the size
+        getBackground().drawImage(kingdomBg, 0, 0); // sets the position
+        bg = new GreenfootSound("bird.mp3"); // initializes the background sound
+        
+        // adds the sprite, kingbara
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 
         
+        // adds the sprite, birdie
         birdie = new Birdie();
         addObject(birdie, 5, 250);
     }
     
     public void act() {
-        kingbara.kingbara();
-        birdie.birdie();
-        bg.setVolume(50);
-        bg.play();
+        kingbara.kingbara(); // adds the sprite, kingbara
+        birdie.birdie(); // adds the sprite, Birdie
+        bg.setVolume(50); // sets the volume
+        bg.play(); // plays the background sound
+        
+        // animates the bird
         if (animationTimer.millisElapsed() < 3000) { 
             birdie.move(1);
         }
         
-        
+        // controls the speed at which the story line displays
         if (animationTimer.millisElapsed() > 500) { 
             addObject(label1, 300, 40);
         }
