@@ -4,7 +4,10 @@ public class Easy extends MainWorld {
     
     /**
      * This class is extended from its parent class, MainWorld.
-     * This class is the easy mode of 
+     * This class is the easy mode of the game
+     * 
+     * The easy mode contains obstacles such as toxin and the user has to jump
+     * between logs in order to reach the portal and save the bird.
      */
     
     //changable for timer here
@@ -13,18 +16,30 @@ public class Easy extends MainWorld {
     // label to display the coins
     private Label coinLabel;
 
-
+    // background sound
     GreenfootSound bg;
+    
+    // a constructor of the Easy class
     public Easy() {
+        // sets the dimension of the world
         super(680, 520, 1);
+        
+        // sets the background
         setBackground("images/gameBG.png");
+        
+        // sets the music
         bg = new GreenfootSound("jungle.mp3");
+        
+        // initialize the character, capybara
         Capybara capybara = new Capybara();
+        // adds capybara
         addObject(capybara, 60, 480);
+        
         //switches
         Switch one = new Switch();
         addObject(one, 570, 115);
-        //adding platforms
+        
+        //adding platforms (the logs)
         Log floor1 = new Log("med");
         addObject(floor1, 150, 515);
         Log floor2 = new Log("short");
@@ -58,8 +73,6 @@ public class Easy extends MainWorld {
         Portal portal = new Portal();
         addObject(portal, 450, 80);
         
-        setBackground("images/gameBG.png");
-        
         //toxin
         Toxin to = new Toxin(90, 15);
         addObject(to, 330, 510);
@@ -69,7 +82,7 @@ public class Easy extends MainWorld {
         Timer t = new Timer();
         addObject(t, 342, 20);
 
-        //add coins
+        //add coins to the world
         Coin coin = new Coin();
         addObject(coin, 330, 440);
 
@@ -92,12 +105,18 @@ public class Easy extends MainWorld {
         Bird bird = new Bird();
         addObject(bird, 585, 130);
         
+        // add the label to display the coins score
         coinLabel = new Label("Coins: 0/6", 30);
-        addObject(coinLabel, 80, 20); // adjust x,y for position
+        addObject(coinLabel, 80, 20); 
     }
 
+    
+    // the act method
     public void act(){
+        // sets the volume of the music
         bg.setVolume(40);
+        
+        // plays the music
         bg.play();
         
         //add number on timer
@@ -122,9 +141,11 @@ public class Easy extends MainWorld {
         
     }
     
+    // updates the coin label
+    // @param coins        the number of coins user has collected
     public void updateCoinLabel(int coins)
     {
-        coinLabel.setValue("Coins: " + coins + "/6");
+        coinLabel.setValue("Coins: " + coins + "/6"); // coins out of 6
     }
 
 }
