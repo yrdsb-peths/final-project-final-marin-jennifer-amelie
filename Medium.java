@@ -62,6 +62,26 @@ public class Medium extends MainWorld
         
         Toxin toxin3 = new Toxin(270, 10);
         addObject(toxin3, 400, 290);
+        
+        //Coins 
+        Coin coin1 = new Coin();
+        addObject(coin1, 360, 480);
+        
+        Coin coin2 = new Coin();
+        addObject(coin2, 20, 480);
+        
+        Coin coin3 = new Coin();
+        addObject(coin3, 50, 250);
+        
+        Coin coin4 = new Coin();
+        addObject(coin4, 400, 220);
+        
+        Coin coin5 = new Coin();
+        addObject(coin5, 500, 370);
+        
+        Coin coin6 = new Coin();
+        addObject(coin6, 650, 150);
+        
     }
     
     public void act(){
