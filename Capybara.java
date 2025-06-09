@@ -184,9 +184,7 @@ public class Capybara extends Actor
         int lookForGround = spriteHeight/2;
         
         Actor ground = getOneObjectAtOffset(0, lookForGround, Log.class);
-        if (ground == null) {
-            ground = getOneObjectAtOffset(0, lookForGround, Water.class);
-        } 
+       
         if (ground == null) {
             jumping = true;
             return false;
