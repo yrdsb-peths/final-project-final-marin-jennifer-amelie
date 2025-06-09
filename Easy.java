@@ -4,6 +4,10 @@ public class Easy extends MainWorld {
     
     //changable for timer here
     int timer = 1550; //3170
+    
+    private Label coinLabel;
+
+
     GreenfootSound bg;
     public Easy() {
         super(680, 520, 1);
@@ -82,6 +86,8 @@ public class Easy extends MainWorld {
         Bird bird = new Bird();
         addObject(bird, 585, 130);
         
+        coinLabel = new Label("Coins: 0/6", 30);
+        addObject(coinLabel, 80, 20); // adjust x,y for position
     }
 
     public void act(){
@@ -109,4 +115,10 @@ public class Easy extends MainWorld {
         }
         
     }
+    
+    public void updateCoinLabel(int coins)
+    {
+        coinLabel.setValue("Coins: " + coins + "/6");
+    }
+
 }

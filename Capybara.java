@@ -21,7 +21,8 @@ public class Capybara extends Actor
     
     // number of coins being collected 
     public int coinsNum = 0;
-
+    
+    
     
     /**
      * constructor - code gets run first time instance created
@@ -152,6 +153,7 @@ public class Capybara extends Actor
         if(isTouching(Coin.class)){
             removeTouching(Coin.class);
             coinsNum++;
+            world.incrementCoinCount(); // new method you'll create         
         }
             
         //going to the ending
