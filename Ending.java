@@ -1,18 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * This class displays the good ending of the story.
+ * The good ending is displayed when the user collects all 6 coins in the level.
+ * In the good ending, capybara manages to free the bird and they reunite
+ * in the kingdom.
+ */
+
 public class Ending extends MainWorld
 {
+    // adds the sprite, kingbara
     private Kingbara kingbara;
+    
+    // adds the sprite, birdie
     private Birdie birdie;
-
+    
+    // displays the lines of the story
     Label label1 = new Label("There you are Birdie!", 30);
     Label label2 = new Label("Welcome back!", 30);
     Label label3 = new Label("And this is the story, between", 30);
     Label label4 = new Label("Capybara and Birdie.", 30);
     Label label5 = new Label("The end :)", 30);
     
+    // timer that controls the speed of the animation
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    //the background sound 
     GreenfootSound bg;
+    
+    // a constructor
     public Ending()
     {
         super(680, 520, 1);

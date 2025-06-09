@@ -2,11 +2,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Medium extends MainWorld
 {
-
+    // label to display the coins
+    private Label coinLabel;
+    
     /**
      * Constructor for objects of class Medium.
      * 
      */
+    
+    
     public Medium() { 
         super(680, 520, 1);
         setBackground("images/gameBG.png");
@@ -82,6 +86,9 @@ public class Medium extends MainWorld
         Coin coin6 = new Coin();
         addObject(coin6, 650, 150);
         
+        // add the label to display the coins score
+        coinLabel = new Label("Coins: 0/6", 30);
+        addObject(coinLabel, 80, 20);
     }
     
     public void act(){
@@ -89,5 +96,12 @@ public class Medium extends MainWorld
             Log last1 = new Log("med");
             addObject(last1, 375, 140);
         }
+    }
+    
+    // updates the coin label
+    // @param coins        the number of coins user has collected
+    public void updateCoinLabel(int coins)
+    {
+        coinLabel.setValue("Coins: " + coins + "/6"); // coins out of 6
     }
 }

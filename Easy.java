@@ -11,7 +11,7 @@ public class Easy extends MainWorld {
      */
     
     //changable for timer here
-    int timer = 1550; //3170
+    int timer = 1550; //1550
     
     // label to display the coins
     private Label coinLabel;
@@ -19,7 +19,7 @@ public class Easy extends MainWorld {
     // background sound
     GreenfootSound bg;
     
-    // a constructor of the Easy class
+    // a constructor
     public Easy() {
         // sets the dimension of the world
         super(680, 520, 1);
@@ -120,22 +120,26 @@ public class Easy extends MainWorld {
         bg.play();
         
         //add number on timer
-        if(timer / 105 > 0){
+        if(timer / 105 > 0){ // how fast the timer counts down
             if(gameOver) {
-                return;
+                return; // checks if game is over
             }
-            timer --;
+            timer --; // counts down
         }
-        showText(""+timer / 105, 342, 20);
+        showText(""+timer / 105, 342, 20); // displays the time
 
-        if (timer / 105 <= 0.99){
+        // ensures the timer stops at 0
+        if (timer / 105 <= 0.99){ 
+            // game is over
             setGameOver(true);
             gameOver = true;
-            bg.stop();
+            
+            // displays game over
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
-            
+            // displays the reset button
             addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            // displays the menu button
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
         
