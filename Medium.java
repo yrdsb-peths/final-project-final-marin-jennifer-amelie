@@ -2,7 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Medium extends MainWorld
 {
-
+    //changable for timer here
+    int timer = 2050; 
     /**
      * Constructor for objects of class Medium.
      * 
@@ -82,12 +83,35 @@ public class Medium extends MainWorld
         Coin coin6 = new Coin();
         addObject(coin6, 650, 150);
         
+        //add timer 
+        Timer t = new Timer();
+        addObject(t, 342, 20);
     }
     
     public void act(){
         if(Log.getYes()){
             Log last1 = new Log("med");
             addObject(last1, 375, 140);
+        }
+        
+        //add number on timer
+        if(timer / 105 > 0){
+            if(gameOver) {
+                return;
+            }
+            timer --;
+        }
+        showText(""+timer / 105, 342, 20);
+
+        if (timer / 105 <= 0.99){
+            setGameOver(true);
+            gameOver = true;
+            
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
+            
+            addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
+            addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
     }
 }
