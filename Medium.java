@@ -1,21 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Easy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Medium extends MainWorld
 {
 
     /**
-     * Constructor for objects of class Easy.
+     * Constructor for objects of class Medium.
      * 
      */
     public Medium() { 
         super(680, 520, 1);
-        setBackground("levels/easy.png");
+        setBackground("images/gameBG.png");
         
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 485);

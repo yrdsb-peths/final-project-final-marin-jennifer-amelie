@@ -11,7 +11,7 @@ public class Hard extends MainWorld
     {    
         super(700, 600, 1);
         
-        setBackground("levels/hard.png");
+        setBackground("images/gameBG1.png");
         Capybara capybara = new Capybara();
         addObject(capybara, 150, 100);
         Switch s = new Switch();
