@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scene1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This class displays the introduction of the story.
  */
+
 public class Scene1 extends MainWorld
 {
-    private Kingbara kingbara;
-    private Birdie birdie;
-    private Boolean timeYet = false;
+    private Kingbara kingbara; // declares the sprite, kingbara
+    private Birdie birdie; // declares the sprite, birdie
+    
+    private Boolean timeYet = false; // checks if all 
+    
     GreenfootSound bg;
     Label label1 = new Label("A long time ago, in Solcieleux, a kingdom", 30);
     Label label2 = new Label("characterized by its striking beauty of the sky", 30);
