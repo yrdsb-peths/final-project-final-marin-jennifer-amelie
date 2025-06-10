@@ -9,37 +9,54 @@ public class Scene1 extends MainWorld
     private Kingbara kingbara; // declares the sprite, kingbara
     private Birdie birdie; // declares the sprite, birdie
     
-    private Boolean timeYet = false; // checks if all 
+    // checks if all the dialogues are played
+    private Boolean timeYet = false; 
     
-    GreenfootSound bg;
+    GreenfootSound bg; // background sound
+    
+    // displays the lines of the story
     Label label1 = new Label("A long time ago, in Solcieleux, a kingdom", 30);
     Label label2 = new Label("characterized by its striking beauty of the sky", 30);
     Label label3 = new Label("and nature, was ruled by two inseparable friends: ", 30);
     Label label4 = new Label("Capybara and Birdie.", 30);
     Label label5 = new Label("Continue \u2192", 30);
     
+    // animation timer for the sprites
     SimpleTimer animationTimer = new SimpleTimer();
+
     
     public Scene1()
     {
         super(680, 520, 1);
+        
+        // background sound
         bg = new GreenfootSound("jungle.mp3");
         bg.setVolume(50);
+        
+        // background
         GreenfootImage kingdomBg = new GreenfootImage("images/kingdom.png");
         kingdomBg.scale(680, 520); 
         getBackground().drawImage(kingdomBg, 0, 0);
         
+        // Kingbara sprite
         kingbara = new Kingbara();
         addObject(kingbara, 400, 550); 
         
+        
+        // Birdie sprite
         birdie = new Birdie();
         addObject(birdie, 200, 300);
     }
     
     public void act() {
+        // adds the sprites
         kingbara.kingbara();
         birdie.birdie();
+        
+        // plays the music
         bg.play();
+        
+        // controls the speed at which the story line displays
         if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
             addObject(label1, 300, 40);
         }
@@ -57,6 +74,7 @@ public class Scene1 extends MainWorld
             timeYet = true;
         }
         
+        // checks if all the dialogues are played
         if (timeYet) {
             if(Greenfoot.isKeyDown("right")){
             Scene2 world = new Scene2();
