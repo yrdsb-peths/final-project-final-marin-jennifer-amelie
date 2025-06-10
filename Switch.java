@@ -1,24 +1,23 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
- * Write a description of class Switch here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A game element -- switch.
+ * Capybara can turn on the switch to have a log pop out.
  */
 public class Switch extends Actor
 {
+    //set image.
     public Switch(){
+        //Rswitch -- off
         GreenfootImage Rswitch = new GreenfootImage("images/switch/Rswitch.png");
         Rswitch.scale(60,60);
         setImage(Rswitch);
     }
     /**
-     * Act - do whatever the Switch wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * When Capybara reaches the switch, Capybara can press 'E' to turn on the switch.
      */
     public void act()
     {
+        //Lswitch -- on
         GreenfootImage Lswitch = new GreenfootImage("images/switch/Lswitch.png");
         Lswitch.scale(60,60);
         if(isTouching(Capybara.class)&&Greenfoot.isKeyDown("E")){

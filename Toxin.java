@@ -1,16 +1,17 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
- * Write a description of class Water here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Toxin water. If Capybara touches, Capybara would die.
  */
 public class Toxin extends Actor
 {
-    GreenfootImage[] toxin = new GreenfootImage[48];
-    SimpleTimer animationTimer = new SimpleTimer();
+    //set the sound.
     GreenfootSound b = new GreenfootSound("blop.mp3");
+    
+    //Toxin water animation.
+    GreenfootImage[] toxin = new GreenfootImage[48];
+    
+    SimpleTimer animationTimer = new SimpleTimer();
+    
     public Toxin(int width, int height) {
         for(int i = 0; i<toxin.length; i++){
            toxin[i] = new GreenfootImage("images/toxinAnimation2/frame_"+(i)+"_delay-0.01s.gif");
@@ -30,11 +31,14 @@ public class Toxin extends Actor
         setImage(toxin[toxinIndex]);
         toxinIndex = (toxinIndex + 1) % toxin.length;
     }
+    
     public void act()
     {
         MainWorld world = (MainWorld) getWorld();
 
         toxing();
+        
+        //Game over if touches Capybara.
         if (isTouching(Capybara.class)) {
             world.setGameOver(true);
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
