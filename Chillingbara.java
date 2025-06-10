@@ -31,9 +31,4 @@ public class Chillingbara extends Actor
         setImage(chillingbara[chillingbaraIndex]);
         chillingbaraIndex = (chillingbaraIndex + 1) % chillingbara.length;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }
