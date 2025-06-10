@@ -124,7 +124,6 @@ public class Medium extends MainWorld
 
         if (timer / 105 <= 0.99){
             setGameOver(true);
-            gameOver = true;
             
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);

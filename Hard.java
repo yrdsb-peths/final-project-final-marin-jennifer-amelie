@@ -9,10 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 public class Hard extends MainWorld
-{
-    // boolean for gameOver 
-    private boolean gameOver = false;
-    
+{    
     //changable for timer here
     int timer = 3170;
     GreenfootSound bg;// background sound
@@ -144,7 +141,6 @@ public class Hard extends MainWorld
         if (timer / 105 <= 0.99){ 
             // game is over
             setGameOver(true);
-            gameOver = true;
             
             // displays game over
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);

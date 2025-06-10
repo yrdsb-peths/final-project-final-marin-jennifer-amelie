@@ -132,8 +132,6 @@ public class Easy extends MainWorld {
         if (timer / 105 <= 0.99){ 
             // game is over
             setGameOver(true);
-            gameOver = true;
-            
             // displays game over
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
