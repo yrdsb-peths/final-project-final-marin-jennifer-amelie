@@ -1,15 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scene2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This class displays the scene 5 of the story.
  */
+
 public class Scene5 extends MainWorld
 {
+    // checks if all the dialogues are played
     private Boolean timeYet = false;
     
+    
+    // story lines
     Label label1 = new Label("You have been invited to assist King", 30);
     Label label2 = new Label("Capybara on his journey. This journey is", 30);
     Label label3 = new Label("perilous, so here are some tips to help", 30);
@@ -17,11 +18,15 @@ public class Scene5 extends MainWorld
     Label label5 = new Label("Tree and retrieve all the coins.", 30);
     Label label6 = new Label("Continue \u2192", 30);
     
+    
+    // animation timer
     SimpleTimer animationTimer = new SimpleTimer();
     
     public Scene5()
     {
         super(680, 520, 1);
+        
+        // background 
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
         GreenfootImage instructionBg = new GreenfootImage("images/instructionsBg.png");
@@ -31,7 +36,8 @@ public class Scene5 extends MainWorld
     }
     
     public void act() {
-        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+        // controls the speed at which the story line displays
+        if (animationTimer.millisElapsed() > 500) { 
             addObject(label1, 330, 90);
         }
         if (animationTimer.millisElapsed() > 2500) {  // after 2 seconds
@@ -50,8 +56,7 @@ public class Scene5 extends MainWorld
             addObject(label6, 550, 500);
             timeYet = true;
         }
-
-        
+        // checks if all the dialogues are played
         if (timeYet) {
             if(Greenfoot.isKeyDown("right")){
             Scene6 world = new Scene6();
