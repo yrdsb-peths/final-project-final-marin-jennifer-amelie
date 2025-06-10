@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The menu allows the user to choose the difficulty level of the game
  */
 public class Menu extends World
 {
@@ -39,15 +36,15 @@ public class Menu extends World
     }
     public void act(){
         if(Greenfoot.mouseClicked(easy)){
-            Easy world2 = new Easy();
+            Easy world2 = new Easy(); // Easy level
             Greenfoot.setWorld(world2);
         }
         if(Greenfoot.mouseClicked(med)){
-            Medium world2 = new Medium();
+            Medium world2 = new Medium(); // Medium level
             Greenfoot.setWorld(world2);
         }
         if(Greenfoot.mouseClicked(hard)){
-            Hard world2 = new Hard();
+            Hard world2 = new Hard(); // Hard level
             Greenfoot.setWorld(world2);
         }
     }
