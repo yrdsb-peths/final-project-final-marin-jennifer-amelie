@@ -1,18 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scene2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This class displays the scene 4 of the story.
  */
+
 public class Scene4 extends MainWorld
 {
+    // declares the sprites
     private Scaredbara scaredbara;
     private Birdie birdie;
     
+    // checks if all the dialogues are played
     private Boolean timeYet = false;
     
+    // story lines
     Label label1 = new Label("A mysterious voice echoes in the air:", 30);
     Label label2 = new Label("\"King Capybara...\"", 30);
     Label label3 = new Label("\"Birdie is in my hands. All I demand is...", 30);
@@ -21,23 +22,35 @@ public class Scene4 extends MainWorld
     Label label6 = new Label("I will release Birdie.\"", 30);
     Label label7 = new Label("Continue \u2192", 30);
     
+    // animation timer
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    // background sound
     GreenfootSound w;
     public Scene4()
     {
         super(680, 520, 1);
+        
+        // background
         GreenfootImage gardenBg = new GreenfootImage("images/garden2.png");
         gardenBg.scale(680, 520); 
         getBackground().drawImage(gardenBg, 0, 0);
+        
+        // background sound
         w = new GreenfootSound("whisper.mp3");
+        w.play();
+        
+        // locates sprite
         scaredbara = new Scaredbara();
         addObject(scaredbara, 400, 350); 
-        w.play();
     }
     
     public void act() {
+        // adds sprite
         scaredbara.scaredbara();
-        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+        
+        // controls the speed at which the story line displays
+        if (animationTimer.millisElapsed() > 500) {  
             addObject(label1, 330, 40);
         }
         if (animationTimer.millisElapsed() > 2000) {  // after 2 seconds
@@ -59,8 +72,7 @@ public class Scene4 extends MainWorld
             addObject(label7, 550, 500);
             timeYet = true;
         }
-
-        
+        // checks if all the dialogues are played
         if (timeYet) {
             if(Greenfoot.isKeyDown("right")){
             Scene5 world = new Scene5();
