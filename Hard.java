@@ -16,6 +16,11 @@ public class Hard extends MainWorld
     //changable for timer here
     int timer = 3170;
     GreenfootSound bg;// background sound
+    //changable for timer here
+    int timer = 2050;
+    private boolean gameOver = false;
+    GreenfootSound bg;
+    
     /**
      * Constructor for objects of class Hard.
      * 
@@ -84,7 +89,8 @@ public class Hard extends MainWorld
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
-        
+
+
         // toxin
         Toxin toxin = new Toxin(85, 10);
         addObject(toxin, 262, 155);
@@ -92,6 +98,8 @@ public class Hard extends MainWorld
         Toxin toxin2 = new Toxin(160, 20);
         addObject(toxin2, 225, 590);
         
+
+
         Toxin toxin3 = new Toxin(80, 20);
         addObject(toxin3, 430, 590);
         
@@ -100,6 +108,11 @@ public class Hard extends MainWorld
         
         Toxin toxin5 = new Toxin(60, 20);
         addObject(toxin5, 25, 590);
+
+        //add timer 
+        Timer t = new Timer();
+        addObject(t, 397, 20);
+
     }
     public void act(){
         // gets a log
@@ -125,6 +138,26 @@ public class Hard extends MainWorld
             addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
             
             // displays menu button
+            addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
+        }
+        
+        //add number on timer
+        if(timer / 105 > 0){
+            if(gameOver) {
+                return;
+            }
+            timer --;
+        }
+        showText(""+timer / 105, 397, 20);
+
+        if (timer / 105 <= 0.99){
+            setGameOver(true);
+            gameOver = true;
+           
+            GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
+            addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
+            
+            addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
     }

@@ -77,6 +77,7 @@ public class Easy extends MainWorld {
         addObject(to, 330, 510);
         Toxin to1 = new Toxin(60, 15);
         addObject(to1, 495, 510);
+        
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
