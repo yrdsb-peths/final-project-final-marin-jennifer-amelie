@@ -6,12 +6,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Capybara extends Actor
 {
+    // speed of descend
     public int vSpeed;
+    // value of gravity
     public int gravity = 2;
     
+    // to check if jump or not 
     public boolean jumping;
+    
+    // how high capybara can jump
     public int jumpStrength = 15;
     
+    
+    // initializing the arrays
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     GreenfootImage[] walkRight = new GreenfootImage[5];
@@ -33,6 +40,7 @@ public class Capybara extends Actor
      */
     
     public Capybara() {
+        // idle animation
         for(int i = 0; i<idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
             idleRight[i].mirrorHorizontally();
@@ -42,6 +50,8 @@ public class Capybara extends Actor
             idleLeft[i] = new GreenfootImage("images/idle_capybara/idle00"+i+".png");
             idleLeft[i].scale(50, 50);
         }
+        
+        // walking animation
         for(int i = 0; i<walkRight.length; i++){
             walkRight[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkRight[i].mirrorHorizontally();
@@ -51,6 +61,8 @@ public class Capybara extends Actor
             walkLeft[i] = new GreenfootImage("images/walking_capybara/walking00"+i+".png");
             walkLeft[i].scale(50, 50);
         }
+        
+        // jumping animation
         for(int i = 0; i<jumpRight.length; i++){
             jumpRight[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpRight[i].mirrorHorizontally();
@@ -60,6 +72,7 @@ public class Capybara extends Actor
             jumpLeft[i] = new GreenfootImage("images/jump_capybara/jump00"+i+".png");
             jumpLeft[i].scale(50, 50);
         }
+        
         animationTimer.mark();
         setImage(idleRight[0]);
         setImage(walkRight[0]);
@@ -100,7 +113,7 @@ public class Capybara extends Actor
         
     }
     
-    // jumping
+    // jumping animation
     public void jumpCapybara(){
         if(animationTimer.millisElapsed() < 100){
             return;
@@ -115,12 +128,15 @@ public class Capybara extends Actor
         }
     }
     
+    
+    // jumping 
     public void jump() {
         vSpeed = vSpeed - jumpStrength;
         jumping = true;
         fall();
     }
     
+    // run function
     public void act()
     {
         MainWorld world = (MainWorld) getWorld();
