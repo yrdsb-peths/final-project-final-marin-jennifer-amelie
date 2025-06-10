@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
- * Write a description of class Kingbara here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Image Rainybara, It's raining.
+ * Being used in Scene 3.
+ * Here is the animetion for Rainybara.
  */
 public class Rainybara extends Actor
 {
@@ -30,10 +28,5 @@ public class Rainybara extends Actor
         animationTimer.mark();
         setImage(rainybara[rainybaraIndex]);
         rainybaraIndex = (rainybaraIndex + 1) % rainybara.length;
-    }
-    
-    public void act()
-    {
-        // Add your action code here.
     }
 }

@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
- * Write a description of class Kingbara here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Image Scaredbara, Capybara got scared!
+ * Being used in Scene 4.
+ * Here is the animation for Scaredbara.
  */
 public class Scaredbara extends Actor
 {
@@ -30,10 +28,5 @@ public class Scaredbara extends Actor
         animationTimer.mark();
         setImage(scaredbara[scaredbaraIndex]);
         scaredbaraIndex = (scaredbaraIndex + 1) % scaredbara.length;
-    }
-    
-    public void act()
-    {
-        // Add your action code here.
     }
 }
