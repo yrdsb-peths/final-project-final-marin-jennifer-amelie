@@ -19,8 +19,10 @@ public class Switch extends Actor
     {
         //Lswitch -- on
         GreenfootImage Lswitch = new GreenfootImage("images/switch/Lswitch.png");
+        GreenfootSound click = new GreenfootSound("switch.mp3");
         Lswitch.scale(60,60);
         if(isTouching(Capybara.class)&&Greenfoot.isKeyDown("E")){
+            click.play();
             setImage(Lswitch);
             Log.setYes(true);
         }
