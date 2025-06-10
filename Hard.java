@@ -111,7 +111,11 @@ public class Hard extends MainWorld
         addObject(coinLabel, 80, 20);
     }
     public void act(){
-        // gets a log
+        // sets the volume of the music
+        bg.setVolume(40);
+        
+        // plays the music
+        bg.play();
         
         if(Log.getYes()){
             Log temp = new Log("short");

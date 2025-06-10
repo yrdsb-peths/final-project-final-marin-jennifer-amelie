@@ -11,6 +11,7 @@ public class Menu extends World
     Tree easy;
     Tree med;
     Tree hard;
+    GreenfootSound music;
     /**
      * Constructor for objects of class Menu.
      * 
@@ -21,6 +22,8 @@ public class Menu extends World
         super(600, 600, 1, false); 
         Bg bg = new Bg();
         addObject(bg, 300, 300);
+        // add music
+        music = new GreenfootSound("menu.mp3");
         //add easy tree
         easy = new Tree();
         addObject(easy, 100, 325);
@@ -38,17 +41,21 @@ public class Menu extends World
         addObject(label, 275, 100);
     }
     public void act(){
+        music.playLoop();
         if(Greenfoot.mouseClicked(easy)){
             Easy world2 = new Easy();
             Greenfoot.setWorld(world2);
+            music.stop();
         }
         if(Greenfoot.mouseClicked(med)){
             Medium world2 = new Medium();
             Greenfoot.setWorld(world2);
+            music.stop();
         }
         if(Greenfoot.mouseClicked(hard)){
             Hard world2 = new Hard();
             Greenfoot.setWorld(world2);
+            music.stop();
         }
     }
 }

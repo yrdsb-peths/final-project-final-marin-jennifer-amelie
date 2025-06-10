@@ -15,7 +15,9 @@ public class Medium extends MainWorld
     
     // label to display the coins
     private Label coinLabel;
- 
+    
+    // background sound
+    GreenfootSound bg;
     /**
      * Constructor for objects of class Medium.
      * 
@@ -25,6 +27,9 @@ public class Medium extends MainWorld
     public Medium() { 
         super(680, 520, 1);
         setBackground("images/gameBG.png");
+        
+        // sets the music
+        bg = new GreenfootSound("jungle.mp3");
         
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 485);
@@ -108,6 +113,11 @@ public class Medium extends MainWorld
     }
     
     public void act(){
+        // sets the volume of the music
+        bg.setVolume(40);
+        
+        // plays the music
+        bg.play();
         if(Log.getYes()){
             Log last1 = new Log("med");
             addObject(last1, 375, 140);
