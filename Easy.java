@@ -109,8 +109,6 @@ public class Easy extends MainWorld {
         coinLabel = new Label("Coins: 0/6", 30);
         addObject(coinLabel, 80, 20); 
     }
-
-    
     // the act method
     public void act(){
         // sets the volume of the music
@@ -142,9 +140,10 @@ public class Easy extends MainWorld {
         }
         
     }
-    
-    // updates the coin label
-    // @param coins        the number of coins user has collected
+    /**
+    /* updates the coin label
+    /* @param coins the number of coins user has collected
+    */
     public void updateCoinLabel(int coins)
     {
         coinLabel.setValue("Coins: " + coins + "/6"); // coins out of 6

@@ -31,9 +31,4 @@ public class Scaredbara extends Actor
         setImage(scaredbara[scaredbaraIndex]);
         scaredbaraIndex = (scaredbaraIndex + 1) % scaredbara.length;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }
