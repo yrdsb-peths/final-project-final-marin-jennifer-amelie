@@ -1,5 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * This class is for animating the capybara sprite
+ */
+
 public class Capybara extends Actor
 {
     public int vSpeed;
