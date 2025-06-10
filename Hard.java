@@ -17,6 +17,8 @@ public class Hard extends MainWorld
     int timer = 3170;
     GreenfootSound bg;// background sound
     
+    // label to display the coins
+    private Label coinLabel;
 
     /**
      * Constructor for objects of class Hard.
@@ -102,6 +104,11 @@ public class Hard extends MainWorld
         
         Toxin toxin5 = new Toxin(60, 20);
         addObject(toxin5, 25, 590);
+        
+        
+        // add the label to display the coins score
+        coinLabel = new Label("Coins: 0/6", 30);
+        addObject(coinLabel, 80, 20);
     }
     public void act(){
         // gets a log
@@ -140,5 +147,12 @@ public class Hard extends MainWorld
             // displays the menu button
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
+    }
+    
+    // updates the coin label
+    // @param coins        the number of coins user has collected
+    public void updateCoinLabel(int coins)
+    {
+        coinLabel.setValue("Coins: " + coins + "/6"); // coins out of 6
     }
 }
