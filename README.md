@@ -4,6 +4,9 @@
 # ABOUT GAME
 You have been invited to assist King Capybara on his journey to save his friend, Birdie! He has to go to the ancient tree to collect all the gold coins hidden there. You can choose between three different levels depending on your skill level.
 
+# TO START
+Begin the game by opening the TitleScreen. You will then be directed to Scenes 1 through 6, which are the introductions of the story. Once you have finished reading the introductions, you will then be directed to the menu, where you can choose to play any level.
+
 # TO PLAY
 Instructions are in the introduction but in case you need a reminder:
 1. The green toxins are deadly. Jump (up arrow) to avoid touching it.
