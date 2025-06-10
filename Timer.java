@@ -11,9 +11,4 @@ public class Timer extends Actor
     public Timer(){
         setImage("images/Counter.png");
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }

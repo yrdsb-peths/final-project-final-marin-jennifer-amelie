@@ -31,9 +31,4 @@ public class Rainybara extends Actor
         setImage(rainybara[rainybaraIndex]);
         rainybaraIndex = (rainybaraIndex + 1) % rainybara.length;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }

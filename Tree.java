@@ -13,12 +13,4 @@ public class Tree extends Actor
         tree.scale(300, 700);
         setImage(tree);
     }
-    /**
-     * Act - do whatever the Tree wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        
-    }
 }

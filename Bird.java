@@ -11,9 +11,4 @@ public class Bird extends Actor
     public Bird(){
         setImage("images/bird.png");
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }

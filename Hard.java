@@ -144,9 +144,10 @@ public class Hard extends MainWorld
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
     }
-    
-    // updates the coin label
-    // @param coins        the number of coins user has collected
+    /**
+    /* updates the coin label
+    /* @param coins the number of coins user has collected
+    */
     public void updateCoinLabel(int coins)
     {
         coinLabel.setValue("Coins: " + coins + "/6"); // coins out of 6

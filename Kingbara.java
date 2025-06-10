@@ -31,9 +31,4 @@ public class Kingbara extends Actor
         setImage(kingbara[kingbaraIndex]);
         kingbaraIndex = (kingbaraIndex + 1) % kingbara.length;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }

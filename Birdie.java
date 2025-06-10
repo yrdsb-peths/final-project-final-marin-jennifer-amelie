@@ -31,9 +31,4 @@ public class Birdie extends Actor
         setImage(birdie[birdieIndex]);
         birdieIndex = (birdieIndex + 1) % birdie.length;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
-    }
 }
