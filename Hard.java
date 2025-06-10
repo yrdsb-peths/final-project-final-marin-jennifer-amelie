@@ -113,7 +113,7 @@ public class Hard extends MainWorld
         
         //add number on timer
         timer--;
-        showText(""+timer / 105, 342, 20);
+      
         
         // if the timer stops
         showText(""+timer / 105, 400, 20);
