@@ -1,11 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scene2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This class displays the scene 3 of the story.
  */
+
 public class Scene3 extends MainWorld
 {
     private Rainybara rainybara;
