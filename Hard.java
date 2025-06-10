@@ -111,25 +111,33 @@ public class Hard extends MainWorld
             addObject(temp, 225, 275);
         }
         
-        //add number on timer
-        timer--;
-      
+        // sets the volume of the music
+        bg.setVolume(40);
         
-        // if the timer stops
-        showText(""+timer / 105, 400, 20);
+        // plays the music
+        bg.play();
+        
+        //add number on timer
+        if(timer / 105 > 0){ // how fast the timer counts down
+            if(gameOver) {
+                return; // checks if game is over
+            }
+            timer --; // counts down
+        }
+        showText(""+timer / 105, 400, 20); // displays the time
 
-
-        if (timer <= 0){
-            setGameOver(true); // gameover
+        // ensures the timer stops at 0
+        if (timer / 105 <= 0.99){ 
+            // game is over
+            setGameOver(true);
+            gameOver = true;
             
-            // displays gameover
+            // displays game over
             GreenfootImage gameOverImage = new GreenfootImage("Game Over", 60, Color.RED, Color.BLACK);
             addObject(new GameOverLabel(gameOverImage), getWidth() / 2, getHeight() / 2);
-            
-            // displays reset button
+            // displays the reset button
             addObject(new RestartButton(), getWidth() / 2 - 100, getHeight() / 2 + 80);
-            
-            // displays menu button
+            // displays the menu button
             addObject(new MenuButton(), getWidth() / 2 + 100, getHeight() / 2 + 80);
         }
     }
