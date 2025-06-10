@@ -76,14 +76,21 @@ public class Hard extends MainWorld
         //coins
         Coin coin = new Coin();
         addObject(coin, 100, 540);
+        
         Coin coin1 = new Coin();
         addObject(coin1, 50, 450);
+        
         Coin coin2 = new Coin();
         addObject(coin2, 515, 540);
+        
         Coin coin3 = new Coin();
         addObject(coin3, 550, 125);
+        
         Coin coin4 = new Coin();
         addObject(coin4, 230, 300);
+        
+        Coin coin5 = new Coin();
+        addObject(coin5, 410, 370);
 
         //add timer 
         Timer t = new Timer();
