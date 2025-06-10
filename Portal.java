@@ -1,5 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
+//Portal image.
 public class Portal extends Actor
 {
     public Portal(){
