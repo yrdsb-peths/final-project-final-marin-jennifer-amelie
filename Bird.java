@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bird here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The picture of the bird on the easy level
  */
 public class Bird extends Actor
 {
