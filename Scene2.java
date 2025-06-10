@@ -56,7 +56,7 @@ public class Scene2 extends MainWorld
         bg.play();
         
         // controls the speed at which the story line displays
-        if (animationTimer.millisElapsed() > 500) {  // after 2 seconds
+        if (animationTimer.millisElapsed() > 500) {  
             addObject(label1, 330, 40);
         }
         if (animationTimer.millisElapsed() > 2000) {  // after 2 seconds
