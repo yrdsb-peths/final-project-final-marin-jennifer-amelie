@@ -42,11 +42,9 @@ public class Medium extends MainWorld
         addObject(floor, 30, 575);
         Log floor1 = new Log("med");
         addObject(floor1, 380, 575);
-        Log floor2 = new Log("short");
-        addObject(floor2, 670, 575);
         Log floor3 = new Log("stump");
-        addObject(floor3, 750, 540);
-
+        addObject(floor3, 635, 520);
+        
         Log fs = new Log("med");
         addObject(fs, 420, 425);
         Log fs2 = new Log("short");
@@ -75,10 +73,10 @@ public class Medium extends MainWorld
         // toxin
         Toxin toxin = new Toxin(70, 15);
         addObject(toxin, 200, 575);
-
-        Toxin toxin2 = new Toxin(100, 15);
-        addObject(toxin2, 570, 575);
-
+        
+        Toxin toxin2 = new Toxin(75, 15);
+        addObject(toxin2, 555, 550);
+        
         Toxin toxin3 = new Toxin(270, 10);
         addObject(toxin3, 400, 290);
 

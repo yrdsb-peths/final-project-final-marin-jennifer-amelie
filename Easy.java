@@ -34,10 +34,6 @@ public class Easy extends MainWorld {
         // adds capybara
         addObject(capybara, 60, 480);
         
-        //switches
-        Switch one = new Switch();
-        addObject(one, 570, 115);
-        
         //adding platforms (the logs)
         Log floor1 = new Log("med");
         addObject(floor1, 150, 515);
