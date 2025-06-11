@@ -103,7 +103,7 @@ public class Easy extends MainWorld {
         
         //add the bird
         Bird bird = new Bird();
-        addObject(bird, 585, 130);
+        addObject(bird, 585, 120);
         
         // add the label to display the coins score
         coinLabel = new Label("Coins: 0/6", 30);

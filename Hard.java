@@ -113,6 +113,10 @@ public class Hard extends MainWorld
         // add the label to display the coins score
         coinLabel = new Label("Coins: 0/6", 30);
         addObject(coinLabel, 80, 20);
+        
+        //add the bird
+        Bird bird = new Bird();
+        addObject(bird, 608, 65);
     }
     public void act(){
         // sets the volume of the music

@@ -22,22 +22,21 @@ public class Medium extends MainWorld
      * Constructor for objects of class Medium.
      * 
      */
-    
-    
+
     public Medium() { 
         super(680, 520, 1);
         setBackground("images/gameBG.png");
-        
+
         // sets the music
         bg = new GreenfootSound("jungle.mp3");
-        
+
         Capybara capybara = new Capybara();
         addObject(capybara, 60, 485);
-        
+
         //switch
         Switch s = new Switch();
         addObject(s, 570, 110);
-        
+
         //adding platforms
         Log floor = new Log("med");
         addObject(floor, 30, 575);
@@ -47,14 +46,14 @@ public class Medium extends MainWorld
         addObject(floor2, 670, 575);
         Log floor3 = new Log("stump");
         addObject(floor3, 750, 540);
-        
+
         Log fs = new Log("med");
         addObject(fs, 420, 425);
         Log fs2 = new Log("short");
         addObject(fs2, 180, 425);
         Log fs1 = new Log("stump");
         addObject(fs1, 50, 350);
-        
+
         Log sd = new Log("short");
         addObject(sd, 220, 290);
         Log sd1 = new Log("short");
@@ -63,52 +62,56 @@ public class Medium extends MainWorld
         addObject(sd2, 580, 290);
         Log sd3 = new Log("stump");
         addObject(sd3, 725, 225);
-        
+
         Log last = new Log("short");
         addObject(last, 570, 140);
         Log last2 = new Log("short");
         addObject(last2, 100, 125);
-        
+
         //portal
         Portal portal = new Portal();
         addObject(portal, 100, 90);
-        
+
         // toxin
         Toxin toxin = new Toxin(70, 15);
         addObject(toxin, 200, 575);
-        
+
         Toxin toxin2 = new Toxin(100, 15);
         addObject(toxin2, 570, 575);
-        
+
         Toxin toxin3 = new Toxin(270, 10);
         addObject(toxin3, 400, 290);
-        
+
         //Coins 
         Coin coin1 = new Coin();
         addObject(coin1, 360, 480);
-        
+
         Coin coin2 = new Coin();
         addObject(coin2, 20, 480);
-        
+
         Coin coin3 = new Coin();
         addObject(coin3, 50, 250);
-        
+
         Coin coin4 = new Coin();
         addObject(coin4, 400, 220);
-        
+
         Coin coin5 = new Coin();
         addObject(coin5, 500, 370);
-        
+
         Coin coin6 = new Coin();
         addObject(coin6, 650, 150);
-        
+
         //add timer 
         Timer t = new Timer();
         addObject(t, 342, 20);
-        
+
         // add the label to display the coins score
         coinLabel = new Label("Coins: 0/6", 30);
         addObject(coinLabel, 80, 20);
+
+        //add the bird
+        Bird bird = new Bird();
+        addObject(bird, 608, 65);
 
     }
     
