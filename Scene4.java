@@ -47,7 +47,7 @@ public class Scene4 extends MainWorld
     
     public void act() {
         // adds sprite
-        scaredbara.scaredbara();
+        //scaredbara.scaredbara();
         
         // controls the speed at which the story line displays
         if (animationTimer.millisElapsed() > 500) {  

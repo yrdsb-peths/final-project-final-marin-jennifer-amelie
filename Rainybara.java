@@ -11,22 +11,23 @@ public class Rainybara extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     
     public Rainybara() {
-        for(int i = 0; i<rainybara.length; i++){
-            rainybara[i] = new GreenfootImage("images/rainybara/frame_"+i+"_delay-0.1s.gif");
-            rainybara[i].scale(150, 150);
-        }
-        
-        setImage(rainybara[0]);
+        //for(int i = 0; i<rainybara.length; i++){
+        //    rainybara[i] = new GreenfootImage("images/rainybara/frame_"+i+"_delay-0.1s.gif");
+        //    rainybara[i].scale(150, 150);
+        //}
+        GreenfootImage rainybara = new GreenfootImage("images/rainybara/frame_7_delay-0.1s.gif");
+        rainybara.scale(100, 100);
+        setImage(rainybara);
     }
     
     int rainybaraIndex = 0;
     // narration
-    public void rainybara () {
-        if(animationTimer.millisElapsed() < 100){
-            return;
-        }
-        animationTimer.mark();
-        setImage(rainybara[rainybaraIndex]);
-        rainybaraIndex = (rainybaraIndex + 1) % rainybara.length;
-    }
+    //public void rainybara () {
+      //  if(animationTimer.millisElapsed() < 100){
+        //    return;
+        //}
+        //animationTimer.mark();
+        //setImage(rainybara[rainybaraIndex]);
+        //rainybaraIndex = (rainybaraIndex + 1) % rainybara.length;
+    //}
 }
