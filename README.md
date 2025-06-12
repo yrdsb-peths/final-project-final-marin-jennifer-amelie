@@ -1,7 +1,6 @@
 # SET  UP
 1. Copy the this file and rename it to `project.greenfoot`
 2. When prompted to initialize a world, right click on "TitleScreen" and click "new TitleScreen()"
-3. You will then be directed to Scenes 1 through 6, which are the introductions of the story. Once you have finished reading the introductions, you will then be directed to the menu, where you can choose to play any level.
 
 # ABOUT GAME
 You have been invited to assist King Capybara on his journey to save his friend, Birdie! He has to go to the ancient tree to collect all the gold coins hidden there. You can choose between three different levels depending on your skill level.
