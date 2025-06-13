@@ -47,7 +47,7 @@ public class Scene3 extends MainWorld
     public void act() {
         
         // add sprite
-        //rainybara.rainybara();
+        rainybara.rainybara();
         
         // controls the speed at which the story line displays
         if (animationTimer.millisElapsed() > 500) {  
