@@ -14,7 +14,7 @@ public class Toxin extends Actor
     
     public Toxin(int width, int height) {
         for(int i = 0; i<toxin.length; i++){
-           toxin[i] = new GreenfootImage("images/toxinAnimation2/frame_"+(i)+"_delay-0.01s.png");
+           toxin[i] = new GreenfootImage("images/toxinAnimation/frame_"+(i)+"_delay-0.01s.png");
            toxin[i].scale(width, height);
        }
        animationTimer.mark();
