@@ -12,7 +12,7 @@ public class Scaredbara extends Actor
     
     public Scaredbara() {
         for(int i = 0; i<scaredbara.length; i++){
-            scaredbara[i] = new GreenfootImage("images/scaredbara/frame_"+i+"_delay-0.1s.gif");
+            scaredbara[i] = new GreenfootImage("images/scaredbara/frame_"+i+"_delay-0.1s.png");
             scaredbara[i].scale(150, 150);
         }
     }

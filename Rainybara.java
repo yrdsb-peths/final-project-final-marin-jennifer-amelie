@@ -12,11 +12,14 @@ public class Rainybara extends Actor
     
     public Rainybara() {
         for(int i = 0; i<rainybara.length; i++){
-            rainybara[i] = new GreenfootImage("images/rainybara/frame"+i+"delay01s.gif");
+
+            rainybara[i] = new GreenfootImage("images/rainybara/frame_"+i+"_delay-0.1s.png");
             rainybara[i].scale(150, 150);
         }
-    }
-    
+        GreenfootImage rainybara = new GreenfootImage("images/rainybara/frame_7_delay-0.1s.png");
+        rainybara.scale(100, 100);
+        setImage(rainybara);
+        }
     int rainybaraIndex = 0;
     // narration
     public void rainybara () {
